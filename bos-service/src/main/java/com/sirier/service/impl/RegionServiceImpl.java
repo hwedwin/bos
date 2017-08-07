@@ -1,6 +1,6 @@
 package com.sirier.service.impl;
 
-import com.sirier.dao.IRegionDao;
+import com.sirier.dao.RegionDao;
 import com.sirier.domain.Region;
 import com.sirier.service.RegionService;
 
@@ -22,7 +22,7 @@ import java.util.List;
 public class RegionServiceImpl implements RegionService {
 
     @Autowired
-    private IRegionDao regionDao;
+    private RegionDao regionDao;
 
     @Override
     public void saveAll(List<Region> list) {
