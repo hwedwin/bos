@@ -25,8 +25,8 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public Page<Staff> pageQuery(Specification<Staff> spec, PageRequest pageRequest) {
-            Page<Staff> pageData = staffDao.findAll(spec,pageRequest);
-            return pageData;
+        Page<Staff> pageData = staffDao.findAll(spec, pageRequest);
+        return pageData;
     }
 
     @Override

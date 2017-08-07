@@ -1,6 +1,7 @@
 package com.sirier.web.action;
 
 import com.sirier.domain.Region;
+import com.sirier.utils.MyUtils;
 import com.sirier.utils.PinYin4jUtils;
 import com.sirier.web.action.base.BaseAction;
 
@@ -13,7 +14,6 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.context.annotation.Scope;
-import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 
@@ -116,9 +116,16 @@ public class RegionAction extends BaseAction<Region> {
                 return cb.and(list.toArray(predicate));
             }
         };
-        Page<Region> pageData = manageService.getRegionService().pageQuery(spec, getPageRequest());
-        setPageData(pageData);
-        return "pageQuery";
+        //老版本的分页+条件查询
+        // Page<Region> pageData = manageService.getRegionService().pageQuery(spec,
+        // getPageRequest());
+        // setPageData(pageData);
+        //return "pageQuery";
+
+        //新版本的分页+条件查询+redis的缓存
+        String jsonString = manageService.getRegionService().pageQuery(spec, getPageRequest());
+        MyUtils.setJsonTypeAndWriteBack(jsonString);
+        return NONE;
     }
 
 }

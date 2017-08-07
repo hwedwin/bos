@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.sirier.domain"/>
 
     <!--导入jdbc.properties-->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
 
     <!--dataSource-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

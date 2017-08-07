@@ -20,6 +20,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsernameAndPassword(String username, String password) {
-        return userDao.findByUsernameAndPassword(username,password);
+        return userDao.findByUsernameAndPassword(username, password);
     }
 }
