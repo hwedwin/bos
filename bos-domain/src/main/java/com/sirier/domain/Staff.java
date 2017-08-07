@@ -2,7 +2,8 @@ package com.sirier.domain;
 // Generated 2017-8-5 20:09:03 by Hibernate Tools 3.2.2.GA
 
 
-import org.apache.struts2.json.annotations.JSON;
+import com.alibaba.fastjson.annotation.JSONField;
+
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.HashSet;
@@ -125,7 +126,7 @@ public class Staff implements java.io.Serializable {
     }
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "staff")
-    @JSON(serialize = false)
+    @JSONField(serialize = false)
     public Set<DecidedZone> getDecidedZones() {
         return this.decidedZones;
     }

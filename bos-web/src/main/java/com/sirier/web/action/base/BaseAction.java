@@ -10,6 +10,7 @@ import com.sirier.utils.FileNameUtils;
 import com.sirier.utils.LogUtils;
 import com.sirier.utils.MyUtils;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -212,6 +213,23 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
             e.printStackTrace();
         }
     }
+
+
+    protected void downloadSheet(String filename, HSSFWorkbook workbook) throws IOException {
+        // -->设置mimetype
+        String mimeType = ServletActionContext.getServletContext().getMimeType(filename);
+        ServletActionContext.getResponse().setContentType(mimeType);
+        // -->根据user-agent获取不乱码的文件名
+        String agent = ServletActionContext.getRequest().getHeader("User-Agent");
+        filename = FileNameUtils.encodeDownloadFilename(filename, agent);
+        // -->设置content-disposition
+        ServletActionContext.getResponse().setHeader("content-disposition", "attachment;filename=" + filename);
+        // -->设置输出流-->直接获取的是响应的输出流
+        ServletOutputStream outputStream = ServletActionContext.getResponse().getOutputStream();
+        // 输出,运用的是workbook自带的输出方式
+        workbook.write(outputStream);
+    }
+
 
     // 分页请求属性驱动  --->有set方法即可塞入数据了,不需要属性的定义
     protected int page; // 页码

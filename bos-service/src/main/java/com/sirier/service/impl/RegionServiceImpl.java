@@ -52,12 +52,20 @@ public class RegionServiceImpl implements RegionService {
             Map<String,Object> map = new HashMap<String,Object>();
             map.put("total", pageData.getTotalElements());
             map.put("rows", pageData.getContent());
+            //json序列化
             jsonString = FastJsonUtils.toJson(map);
             //存数据库
             redisTemplate.opsForValue().set(key, jsonString);
-        }else {
+        }
+        else {
             LogUtils.getInstance().warn("从redis获取缓存");
         }
         return jsonString;
+    }
+
+    @Override
+    public List<Region> listRegion() {
+        List<Region> list = regionDao.findAll();
+        return list;
     }
 }

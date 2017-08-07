@@ -2,7 +2,6 @@ package com.sirier.web.action;
 
 import com.sirier.domain.Standard;
 import com.sirier.domain.User;
-import com.sirier.utils.FastJsonUtils;
 import com.sirier.utils.LogUtils;
 import com.sirier.utils.MyUtils;
 import com.sirier.web.action.base.BaseAction;
@@ -84,23 +83,40 @@ public class StandardAction extends BaseAction<Standard> {
         return "backBatch";
     }
 
+    // /**
+    //  * 查询所有的取派标准,json格式返回给staff界面,优化1-->使用fastjson的工具包
+    //  * @return
+    //  * @throws Exception
+    //  */
+    // @Action(value = "standardAction_listStandardAjax")
+    // public String listStandardAjax() throws Exception {
+    //     // List<Standard> list = manageService.getStandardService().listRegion();
+    //     // result = list;
+    //     // return "pageQuery";
+    //     //把数据给到result,然后指向全局结果集即可
+    //     List<Standard> list = manageService.getStandardService().listStandard();
+    //     String jsonString = FastJsonUtils.toJsonWithProperty(list, "id", "name");
+    //     // MyUtils.setJsonType();
+    //     // MyUtils.getWriter().print(jsonString);
+    //     MyUtils.setJsonTypeAndWriteBack(jsonString);
+    //     return NONE;
+    // }
+
     /**
-     * 查询所有的取派标准,json格式返回给staff界面
+     * 查询所有的取派标准,json格式返回给staff界面,优化2-->使用fastjson的结果集,须配结果集
      * @return
      * @throws Exception
      */
-    @Action(value = "standardAction_listStandardAjax")
+    @Action(value = "standardAction_listStandardAjax",
+            results = { @Result(type = "fastjson",
+                    name = "listStandardAjax",
+                    params = { "includeProperties", "id,name" }) })
     public String listStandardAjax() throws Exception {
-        // List<Standard> list = manageService.getStandardService().listStandard();
-        // result = list;
-        // return "pageQuery";
-        //把数据给到result,然后指向全局结果集即可
         List<Standard> list = manageService.getStandardService().listStandard();
-        String jsonString = FastJsonUtils.toJsonWithProperty(list, "id", "name");
-        // MyUtils.setJsonType();
-        // MyUtils.getWriter().print(jsonString);
-        MyUtils.setJsonTypeAndWriteBack(jsonString);
-        return NONE;
+        // String jsonString = FastJsonUtils.toJsonWithProperty(list, "id", "name");
+        // MyUtils.setJsonTypeAndWriteBack(jsonString);
+        push(list);
+        return "listStandardAjax";
     }
 
 

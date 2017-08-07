@@ -18,6 +18,12 @@ public class ManageService {
     private StaffService staffService;
     @Autowired
     private RegionService regionService;
+    @Autowired
+    private SubareaService subareaService;
+
+    public SubareaService getSubareaService() {
+        return subareaService;
+    }
 
     public RegionService getRegionService() {
         return regionService;

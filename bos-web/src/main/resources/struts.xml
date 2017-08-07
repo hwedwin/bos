@@ -16,6 +16,13 @@
 
     <package name="bos" extends="json-default">
 
+        <!--配置自定义的json解析的结果集类型-->
+        <result-types>
+            <result-type name="fastjson"
+                         class="com.sirier.web.interceptor.com.sirier.web.jsonResult.FastjsonResult">
+            </result-type>
+        </result-types>
+
         <interceptors>
             <interceptor name="loginInterceptor"
                          class="com.sirier.web.interceptor.LoginInterceptor">
@@ -32,7 +39,7 @@
         <global-results>
             <result name="no_login">/login.jsp</result>
             <!--配置的接收json的结果集-->
-            <result name="pageQuery" type="json">
+            <result name="pageQuery" type="fastjson">
                 <param name="root">result</param>
             </result>
         </global-results>

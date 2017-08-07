@@ -1,6 +1,7 @@
 package com.sirier.web.action;
 
 import com.sirier.domain.Region;
+import com.sirier.utils.FastJsonUtils;
 import com.sirier.utils.MyUtils;
 import com.sirier.utils.PinYin4jUtils;
 import com.sirier.web.action.base.BaseAction;
@@ -122,10 +123,18 @@ public class RegionAction extends BaseAction<Region> {
         // setPageData(pageData);
         //return "pageQuery";
 
-        //新版本的分页+条件查询+redis的缓存
+        //新版本的分页+条件查询+redis的缓存,在存redis前fastjson序列化
         String jsonString = manageService.getRegionService().pageQuery(spec, getPageRequest());
         MyUtils.setJsonTypeAndWriteBack(jsonString);
         return NONE;
     }
 
+
+    @Action(value = "regionAction_listRegionAjax")
+    public String listRegionAjax() throws Exception {
+        List<Region> list = manageService.getRegionService().listRegion();
+        String jsonString = FastJsonUtils.toJsonWithProperty(list, "id", "name");
+        MyUtils.setJsonTypeAndWriteBack(jsonString);
+        return NONE;
+    }
 }

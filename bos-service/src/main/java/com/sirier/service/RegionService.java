@@ -11,4 +11,7 @@ public interface RegionService {
     void saveAll(List<Region> list);
 
     String pageQuery(Specification<Region> spec, PageRequest pageRequest);
+
+    List<Region> listRegion();
+
 }
