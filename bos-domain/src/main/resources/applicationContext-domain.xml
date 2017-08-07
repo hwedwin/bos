@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <!--spring扫描包-->
+    <context:component-scan base-package="com.sirier.domain"/>
+
+    <!--导入jdbc.properties-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--dataSource-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driverClass}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+
+    <!--配置spring data jpa 的工程,相当于sessionFactory-->
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="packagesToScan" value="com.sirier.domain"/>
+
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <!-- 自动建表配置 -->
+                <property name="generateDdl" value="true"/>
+                <property name="database" value="MYSQL"/>
+                <!-- 方言 -->
+                <property name="databasePlatform" value="${jdbc.dialect}"/>
+                <!-- sql打印 -->
+                <property name="showSql" value="true"/>
+            </bean>
+        </property>
+
+        <!--&lt;!&ndash; 配置索引库磁盘位置 &ndash;&gt;-->
+        <!--<property name="jpaProperties">-->
+        <!--<props>-->
+        <!--<prop key="hibernate.search.default.indexBase">d:/myindex</prop>-->
+        <!--&lt;!&ndash; 		    <prop key="hibernate.search.default.indexBase">/root/myindex_heima02</prop> &ndash;&gt;-->
+        <!--</props>-->
+        <!--</property>-->
+
+    </bean>
+</beans>
