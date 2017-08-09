@@ -10,7 +10,7 @@ import java.util.Set;
  * Created by Sirierx on 2017/8/5.
  */
 
-public  class FastJsonUtils {
+public class FastJsonUtils {
 
     /**
      * 序列化任何对象,包含所有字段
@@ -18,6 +18,9 @@ public  class FastJsonUtils {
      * @return
      */
     public static String toJson(Object object) {
+        // 使用这个SerializerFeature.xxx,关闭循环对象引用,但是容易出现栈溢出
+        // String jsonString = JSON.toJSONString(object, SerializerFeature
+        // .DisableCircularReferenceDetect);
         String jsonString = JSON.toJSONString(object);
         return jsonString;
     }

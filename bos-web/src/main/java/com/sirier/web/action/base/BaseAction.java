@@ -16,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -26,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
@@ -181,38 +178,41 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
         MyUtils.getWriter().write(jsonString);
     }
 
+
+/**
+ * 提供文件下载方法,内部实现两头一流的封装,文件名的兼容,采用response的输出流
+ * @param filename 初始文件名
+ * @param path     下载文件的url
+ */
     /**
-     * 提供文件下载方法,内部实现两头一流的封装,文件名的兼容,采用response的输出流
-     * @param filename 初始文件名
-     * @param path     下载文件的url
+     * public void download(String filename, String path) {
+     * HttpServletResponse response = getResponse();
+     * try {
+     * ServletContext context = ServletActionContext.getServletContext();
+     * response.setHeader(
+     * "Content-Disposition",
+     * "attachment;filename=" +
+     * FileNameUtils.encodeDownloadFilename(
+     * filename, ServletActionContext.getRequest()
+     * .getHeader("user-agent")));
+     *
+     * response.setContentType(context.getMimeType(filename));
+     * //输出流
+     * ServletOutputStream outputStream = response.getOutputStream();
+     * //写入流,很多插件都有提供,这里是最底层的方式
+     * InputStream in = new FileInputStream(path);
+     * int len;
+     * byte[] bytes = new byte[1024 * 8];
+     * while ((len = in.read(bytes)) != -1) {
+     * outputStream.write(bytes, 0, len);
+     * }
+     *
+     * in.close();
+     * } catch (IOException e) {
+     * e.printStackTrace();
+     * }
+     * }
      */
-    public void download(String filename, String path) {
-        HttpServletResponse response = getResponse();
-        try {
-            ServletContext context = ServletActionContext.getServletContext();
-            response.setHeader(
-                    "Content-Disposition",
-                    "attachment;filename=" +
-                            FileNameUtils.encodeDownloadFilename(
-                                    filename, ServletActionContext.getRequest()
-                                            .getHeader("user-agent")));
-
-            response.setContentType(context.getMimeType(filename));
-            //输出流
-            ServletOutputStream outputStream = response.getOutputStream();
-            //写入流,很多插件都有提供,这里是最底层的方式
-            InputStream in = new FileInputStream(path);
-            int len;
-            byte[] bytes = new byte[1024 * 8];
-            while ((len = in.read(bytes)) != -1) {
-                outputStream.write(bytes, 0, len);
-            }
-
-            in.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     protected void downloadSheet(String filename, HSSFWorkbook workbook) throws IOException {
@@ -223,7 +223,8 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
         String agent = ServletActionContext.getRequest().getHeader("User-Agent");
         filename = FileNameUtils.encodeDownloadFilename(filename, agent);
         // -->设置content-disposition
-        ServletActionContext.getResponse().setHeader("content-disposition", "attachment;filename=" + filename);
+        ServletActionContext.getResponse().setHeader("content-disposition", "attachment;" +
+                "filename=" + filename);
         // -->设置输出流-->直接获取的是响应的输出流
         ServletOutputStream outputStream = ServletActionContext.getResponse().getOutputStream();
         // 输出,运用的是workbook自带的输出方式

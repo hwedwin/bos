@@ -1,6 +1,8 @@
 package com.sirier.web.action;
 
 import com.sirier.domain.Staff;
+import com.sirier.utils.FastJsonUtils;
+import com.sirier.utils.MyUtils;
 import com.sirier.web.action.base.BaseAction;
 
 import org.apache.commons.lang3.StringUtils;
@@ -14,6 +16,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -77,4 +80,16 @@ public class StaffAction extends BaseAction<Staff> {
         manageService.getStaffService().add(model);
         return "add";
     }
+
+    //staffAction_findAllStaffAjax
+
+    @Action(value = "staffAction_listStaffAjax")
+    public String listStaffAjax() throws Exception {
+        //把数据给到result,然后指向全局结果集即可
+        List<Staff> list = manageService.getStaffService().listStaff();
+        String jsonString = FastJsonUtils.toJsonWithProperty(list, "id", "name");
+        MyUtils.setJsonTypeAndWriteBack(jsonString);
+        return NONE;
+    }
+
 }

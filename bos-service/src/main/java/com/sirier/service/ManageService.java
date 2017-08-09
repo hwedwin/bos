@@ -21,6 +21,10 @@ public class ManageService {
     @Autowired
     private SubareaService subareaService;
 
+
+    @Autowired
+    private DecidedzoneService decidedzoneService;
+
     public SubareaService getSubareaService() {
         return subareaService;
     }
@@ -39,6 +43,10 @@ public class ManageService {
 
     public StandardService getStandardService() {
         return standardService;
+    }
+
+    public DecidedzoneService getDecidedzoneService() {
+        return decidedzoneService;
     }
 
 }

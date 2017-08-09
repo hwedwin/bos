@@ -44,6 +44,7 @@ public class RegionServiceImpl implements RegionService {
         String className = this.getClass().getSimpleName();
         String key = className + "_" + pageNumber + "_" + pageSize;
 
+        //要考虑redis服务器开关问题
         String jsonString = (String)redisTemplate.opsForValue().get(key);
 
         if (StringUtils.isBlank(jsonString)) {

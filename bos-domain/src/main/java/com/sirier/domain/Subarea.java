@@ -2,6 +2,8 @@ package com.sirier.domain;
 // Generated 2017-8-5 20:09:03 by Hibernate Tools 3.2.2.GA
 
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
@@ -23,6 +25,7 @@ import javax.persistence.Table;
 public class Subarea implements java.io.Serializable {
 
 
+    @JSONField(name = "subareaId")
     private String id;
     private Region region;
     private DecidedZone decidedZone;
@@ -31,6 +34,13 @@ public class Subarea implements java.io.Serializable {
     private String endnum;
     private Character single;
     private String position;
+
+
+    //subareaId-->提供给定区页面放置id紊乱的id
+    //-->已通过json序列化改名实现效果
+    // private String getSubareaId() {
+    //     return id;
+    // }
 
     public Subarea() {
     }
@@ -71,6 +81,7 @@ public class Subarea implements java.io.Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DECIDEDZONE_ID")
+    @JSONField(serialize = false)
     public DecidedZone getDecidedZone() {
         return this.decidedZone;
     }

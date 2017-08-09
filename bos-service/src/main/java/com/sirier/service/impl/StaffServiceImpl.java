@@ -11,6 +11,8 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by Sirierx on 2017/8/5.
  */
@@ -32,5 +34,10 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public void add(Staff model) {
         staffDao.save(model);
+    }
+
+    @Override
+    public List<Staff> listStaff() {
+        return staffDao.findAll();
     }
 }
