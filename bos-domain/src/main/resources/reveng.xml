@@ -14,7 +14,8 @@ jdbc.properties和reveng.xml
     <!--<schema-selection match-table="t_user" match-catalog="bos2"/>-->
     <!--<schema-selection match-table="t_standard" match-catalog="bos2"/>-->
     <!--&lt;!&ndash; 正则表达式 .表示任意字符 * 0或者多个字符 &ndash;&gt;-->
-    <schema-selection match-table="bc_.*" match-catalog="bos2"/>
+    <!--<schema-selection match-table="bc_.*" match-catalog="bos2"/>-->
+    <schema-selection match-table="crm_customers" match-catalog="bos2"/>
     <!--&lt;!&ndash; 反向生成Customer &ndash;&gt;-->
     <!--<schema-selection  match-table="customers"  match-catalog="bos2"/>-->
     <!--<schema-selection  match-table="qp_.*"  match-catalog="bos2"/>-->
@@ -40,30 +41,36 @@ jdbc.properties和reveng.xml
     <!--class="com.sirier.domain.Standard">-->
     <!--</table>-->
 
-    <table name="bc_staff" catalog="bos2"
-           class="com.sirier.domain.Staff">
-        <primary-key>
-            <generator class="uuid"></generator>
-        </primary-key>
-    </table>
-    <table name="bc_region" catalog="bos2"
-           class="com.sirier.domain.Region">
-        <primary-key>
-            <generator class="uuid"></generator>
-        </primary-key>
-    </table>
-    <table name="bc_subarea" catalog="bos2"
-           class="com.sirier.domain.Subarea">
-        <primary-key>
-            <generator class="uuid"></generator>
-        </primary-key>
-    </table>
-    <table name="bc_decidedzone" catalog="bos2"
-           class="com.sirier.domain.DecidedZone">
-        <primary-key>
-            <generator class="uuid"></generator>
-        </primary-key>
-    </table>
+    <!--<table name="bc_staff" catalog="bos2"-->
+           <!--class="com.sirier.domain.Staff">-->
+        <!--<primary-key>-->
+            <!--<generator class="uuid"></generator>-->
+        <!--</primary-key>-->
+    <!--</table>-->
+    <!--<table name="bc_region" catalog="bos2"-->
+           <!--class="com.sirier.domain.Region">-->
+        <!--<primary-key>-->
+            <!--<generator class="uuid"></generator>-->
+        <!--</primary-key>-->
+    <!--</table>-->
+    <!--<table name="bc_subarea" catalog="bos2"-->
+           <!--class="com.sirier.domain.Subarea">-->
+        <!--<primary-key>-->
+            <!--<generator class="uuid"></generator>-->
+        <!--</primary-key>-->
+    <!--</table>-->
+    <!--<table name="bc_decidedzone" catalog="bos2"-->
+           <!--class="com.sirier.domain.DecidedZone">-->
+        <!--<primary-key>-->
+            <!--<generator class="uuid"></generator>-->
+        <!--</primary-key>-->
+    <!--</table>-->
+<!--<table name="crm_customers" catalog="bos2"-->
+                      <!--class="com.sirierx.crm.domain.Customer">-->
+    <!--&lt;!&ndash;<primary-key>&ndash;&gt;-->
+        <!--&lt;!&ndash;<generator class="uuid"></generator>&ndash;&gt;-->
+    <!--&lt;!&ndash;</primary-key>&ndash;&gt;-->
+<!--</table>-->
 
 
     <!--   <table name="stores" catalog="ssh_store" -->

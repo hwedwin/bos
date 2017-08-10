@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/bos-crm" />
     <file type="web" url="file://$PROJECT_DIR$/bos-web" />
     <type id="Spring" />
   </component>
@@ -26,6 +27,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../crm/pom.xml" />
+        <option value="$PROJECT_DIR$/bos-crm/pom.xml" />
       </list>
     </option>
   </component>

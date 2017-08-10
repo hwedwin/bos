@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bos-crm" />
         <module name="bos-dao" />
         <module name="bos-domain" />
         <module name="bos-redis" />
@@ -16,12 +17,14 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bos" target="1.7" />
+      <module name="bos-crm" target="1.7" />
       <module name="bos-dao" target="1.7" />
       <module name="bos-domain" target="1.7" />
       <module name="bos-redis" target="1.7" />
       <module name="bos-service" target="1.7" />
       <module name="bos-utils" target="1.7" />
       <module name="bos-web" target="1.7" />
+      <module name="crm" target="1.7" />
       <module name="test" target="1.7" />
     </bytecodeTargetLevel>
   </component>

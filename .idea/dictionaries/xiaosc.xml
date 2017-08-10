@@ -4,6 +4,7 @@
       <w>addresskey</w>
       <w>alibaba</w>
       <w>belerweb</w>
+      <w>cancle</w>
       <w>candara</w>
       <w>capstr</w>
       <w>checkcode</w>
@@ -11,6 +12,7 @@
       <w>combobox</w>
       <w>datagrid</w>
       <w>decidedzone</w>
+      <w>decidezone</w>
       <w>deltag</w>
       <w>easyui</w>
       <w>endnum</w>
@@ -21,6 +23,7 @@
       <w>hbmxml</w>
       <w>itext</w>
       <w>jasperreport</w>
+      <w>jaxrs</w>
       <w>jaxws</w>
       <w>jdbcconfiguration</w>
       <w>jedis</w>

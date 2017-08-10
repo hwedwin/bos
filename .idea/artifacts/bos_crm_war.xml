@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bos-crm:war">
+    <output-path>$PROJECT_DIR$/bos-crm/target</output-path>
+    <root id="archive" name="bos-crm-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="bos-crm:war exploded" />
+    </root>
+  </artifact>
+</component>
