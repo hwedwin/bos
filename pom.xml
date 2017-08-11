@@ -9,44 +9,6 @@
     <artifactId>bos</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>bos-web</module>
-        <module>bos-utils</module>
-        <module>bos-service</module>
-        <module>bos-domain</module>
-        <module>bos-dao</module>
-        <module>bos-redis</module>
-    </modules>
-
-    <properties>
-        <spring.version>4.2.8.RELEASE</spring.version>
-        <spring.datajpa.version>1.10.4.RELEASE</spring.datajpa.version>
-        <hibernate.version>4.2.6.Final</hibernate.version>
-        <struts2.version>2.3.16.1</struts2.version>
-        <slf4j.version>1.7.5</slf4j.version>
-        <c3p0.version>0.9.1.2</c3p0.version>
-        <mysql.version>5.0.8</mysql.version>
-        <servlet.version>2.5</servlet.version>
-        <jsp.version>2.0</jsp.version>
-        <junit.version>4.11</junit.version>
-        <!-- 反向生成实体类 -->
-        <hibernate-tools.version>3.2.4.GA</hibernate-tools.version>
-        <!-- poi java解析和读取 office -->
-        <poi.version>3.9</poi.version>
-        <!-- 搜索引擎 全文检索 -->
-        <hibernate-search.version>4.1.0.Final</hibernate-search.version>
-        <!-- 权限框架 -->
-        <shiro.version>1.2.2</shiro.version>
-        <!-- 二级缓存框架 -->
-        <ehcache.version>2.6.6</ehcache.version>
-        <!-- redis nosql 内存数据库 -->
-        <jedis.version>2.6.2</jedis.version>
-        <spring.data.redis>1.7.1.RELEASE</spring.data.redis>
-        <!-- 消息队列 active mq -->
-        <activemq.version>5.2.0</activemq.version>
-    </properties>
-
-
     <dependencies>
         <!-- spring -->
         <dependency>
@@ -332,7 +294,52 @@
             <version>2.5.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.sirierx</groupId>
+            <artifactId>sms</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--sms自己的短信工具包-->
+
     </dependencies>
+
+    <modules>
+        <module>bos-web</module>
+        <module>bos-utils</module>
+        <module>bos-service</module>
+        <module>bos-domain</module>
+        <module>bos-dao</module>
+        <module>bos-redis</module>
+    </modules>
+
+
+    <properties>
+        <spring.version>4.2.8.RELEASE</spring.version>
+        <spring.datajpa.version>1.10.4.RELEASE</spring.datajpa.version>
+        <hibernate.version>4.2.6.Final</hibernate.version>
+        <struts2.version>2.3.16.1</struts2.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
+        <mysql.version>5.0.8</mysql.version>
+        <servlet.version>2.5</servlet.version>
+        <jsp.version>2.0</jsp.version>
+        <junit.version>4.11</junit.version>
+        <!-- 反向生成实体类 -->
+        <hibernate-tools.version>3.2.4.GA</hibernate-tools.version>
+        <!-- poi java解析和读取 office -->
+        <poi.version>3.9</poi.version>
+        <!-- 搜索引擎 全文检索 -->
+        <hibernate-search.version>4.1.0.Final</hibernate-search.version>
+        <!-- 权限框架 -->
+        <shiro.version>1.2.2</shiro.version>
+        <!-- 二级缓存框架 -->
+        <ehcache.version>2.6.6</ehcache.version>
+        <!-- redis nosql 内存数据库 -->
+        <jedis.version>2.6.2</jedis.version>
+        <spring.data.redis>1.7.1.RELEASE</spring.data.redis>
+        <!-- 消息队列 active mq -->
+        <activemq.version>5.2.0</activemq.version>
+    </properties>
 
     <build>
         <pluginManagement>

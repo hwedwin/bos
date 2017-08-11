@@ -151,5 +151,6 @@
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.pinyin4j:pinyin4j:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sirierx:sms:1.0" level="project" />
   </component>
 </module>
