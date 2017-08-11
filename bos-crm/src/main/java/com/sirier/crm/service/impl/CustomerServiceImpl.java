@@ -36,7 +36,8 @@ public class CustomerServiceImpl implements CustomerService {
         if (StringUtils.isNoneBlank(customerIds)) {
             String cIds[] = customerIds.split(",");
             for (String id : cIds) {
-                customerDao.assignedCustomerToDecidedzone(decidezoneId, id);
+                System.out.println("id = " + id);
+                customerDao.assignedCustomerToDecidedzone(decidezoneId, Integer.parseInt(id));
             }
         }
     }

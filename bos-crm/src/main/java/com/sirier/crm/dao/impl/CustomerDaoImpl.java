@@ -38,7 +38,7 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
     }
 
     @Override
-    public void assignedCustomerToDecidedzone(String decidezoneId, String customerId) {
+    public void assignedCustomerToDecidedzone(String decidezoneId, Integer customerId) {
         String hql = "update Customer set  decidedzoneId = ?  where id = ? ";
         Query query = getSession().createQuery(hql);
         query.setParameter(0,decidezoneId);

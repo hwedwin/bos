@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/bos-crm" />
+    <file type="web" url="file://$PROJECT_DIR$/bos-foreground" />
     <file type="web" url="file://$PROJECT_DIR$/bos-web" />
     <type id="Spring" />
   </component>
@@ -29,6 +30,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../crm/pom.xml" />
         <option value="$PROJECT_DIR$/bos-crm/pom.xml" />
+        <option value="$PROJECT_DIR$/bos-foreground/pom.xml" />
+        <option value="$PROJECT_DIR$/sms/pom.xml" />
       </list>
     </option>
   </component>

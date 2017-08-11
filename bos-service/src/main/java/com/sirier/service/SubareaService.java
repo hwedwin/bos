@@ -15,4 +15,5 @@ public interface SubareaService {
 
     List<Subarea> findAllSubarea();
 
+    List<Subarea> findSubareaByDecidedzone(String id);
 }

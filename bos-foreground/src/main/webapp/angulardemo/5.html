@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AngularJS路由的使用 </title>
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<script type="text/javascript" src="../js/angular-route.min.js" ></script>
+	</head>
+	
+	<body ng-app="myapp">
+		<div>
+			<h1>HEAD</h1>
+			<ul>
+				<li><a href="#/">首页</a></li>
+				<li><a href="#/users">用户管理</a></li>
+				<li><a href="#/products">商品管理</a></li>
+			</ul>			
+		</div>
+		
+		<!--显示不同页面内容 -->
+		<!-- ng-view 显示路由调用的页面 -->
+		<div ng-view></div>
+		
+		<div>
+			<h1>ROOT</h1>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var myapp = angular.module("myapp",[]);
+		myapp.config(["$routeProvider" , function($routeProvider){
+			// 设置路由对应页面 
+			$routeProvider.when("/", {
+				templateUrl: '5_1.html'
+			}).when("/users", {
+				templateUrl: '5_2.html'
+			}).when("/products", {
+				templateUrl: '5_3.html'
+			}).otherwise({
+				redirectTo: '/'
+			});
+		}]);
+	</script>
+</html>

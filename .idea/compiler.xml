@@ -9,10 +9,12 @@
         <module name="bos-crm" />
         <module name="bos-dao" />
         <module name="bos-domain" />
+        <module name="bos-foreground" />
         <module name="bos-redis" />
         <module name="bos-service" />
         <module name="bos-utils" />
         <module name="bos-web" />
+        <module name="sms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,11 +22,13 @@
       <module name="bos-crm" target="1.7" />
       <module name="bos-dao" target="1.7" />
       <module name="bos-domain" target="1.7" />
+      <module name="bos-foreground" target="1.5" />
       <module name="bos-redis" target="1.7" />
       <module name="bos-service" target="1.7" />
       <module name="bos-utils" target="1.7" />
       <module name="bos-web" target="1.7" />
       <module name="crm" target="1.7" />
+      <module name="sms" target="1.6" />
       <module name="test" target="1.7" />
     </bytecodeTargetLevel>
   </component>

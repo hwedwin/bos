@@ -45,4 +45,10 @@ public class SubareaServiceImpl implements SubareaService {
         List<Subarea> list = subareaDao.findAll();
         return list;
     }
+
+    @Override
+    public List<Subarea> findSubareaByDecidedzone(String id) {
+        List<Subarea> list= subareaDao.findSubareaByDecidedzone(id);
+        return list;
+    }
 }

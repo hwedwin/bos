@@ -196,4 +196,15 @@ public class SubareaAction extends BaseAction<Subarea> {
         return NONE;
     }
 
+    //subareaAction_findSubareaByDecidedzone
+    @Action(value = "subareaAction_findSubareaByDecidedzone")
+    public String findSubareaByDecidedzone() throws Exception {
+        LogUtils.getInstance().warn("id------->"+model.getId());
+        List<Subarea> list = manageService.getSubareaService().findSubareaByDecidedzone(model.getId());
+        String jsonString = FastJsonUtils.toJson(list);
+        MyUtils.setJsonTypeAndWriteBack(jsonString);
+        return NONE;
+    }
+
+
 }

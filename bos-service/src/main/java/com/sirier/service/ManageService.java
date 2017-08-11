@@ -20,10 +20,10 @@ public class ManageService {
     private RegionService regionService;
     @Autowired
     private SubareaService subareaService;
-
-
     @Autowired
     private DecidedzoneService decidedzoneService;
+    @Autowired
+    private CustomerService customerService;
 
     public SubareaService getSubareaService() {
         return subareaService;
@@ -49,4 +49,7 @@ public class ManageService {
         return decidedzoneService;
     }
 
+    public CustomerService getCustomerService() {
+        return customerService;
+    }
 }

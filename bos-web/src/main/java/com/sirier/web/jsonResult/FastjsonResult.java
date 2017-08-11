@@ -1,4 +1,4 @@
-package com.sirier.web.interceptor.com.sirier.web.jsonResult;
+package com.sirier.web.jsonResult;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;

@@ -19,7 +19,7 @@
         <!--配置自定义的json解析的结果集类型-->
         <result-types>
             <result-type name="fastjson"
-                         class="com.sirier.web.interceptor.com.sirier.web.jsonResult.FastjsonResult">
+                         class="com.sirier.web.jsonResult.FastjsonResult">
             </result-type>
         </result-types>
 

@@ -31,7 +31,6 @@ public class Customer  implements java.io.Serializable {
     public Customer() {
     }
 
-	
     public Customer(String name, String telephone, String address) {
         this.name = name;
         this.telephone = telephone;
@@ -102,8 +101,17 @@ public class Customer  implements java.io.Serializable {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", address='" + address + '\'' +
+                ", station='" + station + '\'' +
+                ", decidedzoneId='" + decidedzoneId + '\'' +
+                '}';
+    }
 }
 
 

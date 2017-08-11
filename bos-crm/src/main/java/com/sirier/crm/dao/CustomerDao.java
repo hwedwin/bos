@@ -17,7 +17,7 @@ public interface CustomerDao {
     public List<Customer> getListHasAssociation(String decidezoneId);
 
     // 定区绑定客户
-    public void assignedCustomerToDecidedzone(String decidedzoneId,String customerId);
+    public void assignedCustomerToDecidedzone(String decidedzoneId,Integer customerId);
 
     // 取消定区关联所有客户
     public void cancleCustomerToDecidedzone(String decidedzoneId);

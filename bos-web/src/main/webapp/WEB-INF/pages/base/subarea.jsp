@@ -93,7 +93,7 @@
         width: 120,
         align: 'center',
         formatter: function (data, row, index) {
-            return row.id;
+            return row.subareaId;
         }
     }, {
         field: 'province',
