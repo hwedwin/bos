@@ -1,6 +1,7 @@
 package com.sirier.utils;
 
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
+import com.aliyuncs.exceptions.ClientException;
 import com.sirierx.sms.SendSmsUtils;
 
 /**
@@ -9,7 +10,7 @@ import com.sirierx.sms.SendSmsUtils;
 
 public class SmsUtils {
 
-    public static SendSmsResponse sendSmsToSomeOne(String telephone, String name) {
+    public static SendSmsResponse sendSmsToSomeOne(String telephone, String name) throws ClientException {
         SendSmsResponse response = SendSmsUtils.sendSms(telephone, name);
 
         System.out.println("短信接口返回的数据----------------");

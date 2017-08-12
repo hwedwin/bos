@@ -300,6 +300,11 @@
             <version>1.0</version>
         </dependency>
         <!--sms自己的短信工具包-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>3.2.3</version>
+        </dependency>
 
     </dependencies>
 

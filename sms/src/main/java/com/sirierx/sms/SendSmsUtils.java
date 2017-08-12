@@ -107,15 +107,15 @@ public class SendSmsUtils {
     }
 
 
-    // public static void main(String[] args) throws ClientException {
-    //
-    //     //发短信
-    //     SendSmsResponse response = sendSms("18818070523","sirierx");
-    //     System.out.println("短信接口返回的数据----------------");
-    //     System.out.println("Code=" + response.getCode());
-    //     System.out.println("Message=" + response.getMessage());
-    //     System.out.println("RequestId=" + response.getRequestId());
-    //     System.out.println("BizId=" + response.getBizId());
-    //
-    // }
+    public static void main(String[] args) throws ClientException {
+
+        //发短信
+        SendSmsResponse response = sendSms("18818070523","sirierx");
+        System.out.println("短信接口返回的数据----------------");
+        System.out.println("Code=" + response.getCode());
+        System.out.println("Message=" + response.getMessage());
+        System.out.println("RequestId=" + response.getRequestId());
+        System.out.println("BizId=" + response.getBizId());
+
+    }
 }

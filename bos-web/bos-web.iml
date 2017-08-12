@@ -14,11 +14,11 @@
         <configuration>
           <fileset id="s2fileset2" name="My Fileset 2" removed="false">
             <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
-            <file>jar://D:/maven/repository/org/apache/struts/struts2-convention-plugin/2.3.16.1/struts2-convention-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
-            <file>jar://D:/maven/repository/org/apache/struts/struts2-core/2.3.16.1/struts2-core-2.3.16.1.jar!/struts-default.xml</file>
-            <file>jar://D:/maven/repository/org/apache/struts/struts2-jfreechart-plugin/2.3.16.1/struts2-jfreechart-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
-            <file>jar://D:/maven/repository/org/apache/struts/struts2-json-plugin/2.3.16.1/struts2-json-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
-            <file>jar://D:/maven/repository/org/apache/struts/struts2-spring-plugin/2.3.16.1/struts2-spring-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-convention-plugin/2.3.16.1/struts2-convention-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.3.16.1/struts2-core-2.3.16.1.jar!/struts-default.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-jfreechart-plugin/2.3.16.1/struts2-jfreechart-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-json-plugin/2.3.16.1/struts2-json-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
+            <file>jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-spring-plugin/2.3.16.1/struts2-spring-plugin-2.3.16.1.jar!/struts-plugin.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -209,5 +209,6 @@
     <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.pinyin4j:pinyin4j:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.sirierx:sms:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.3" level="project" />
   </component>
 </module>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 不用重启服务器 -->
+    <constant name="struts.i18n.reload" value="true"/>
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true"/>
+    <!-- 表单样式 -->
+    <constant name="struts.ui.theme" value="simple"/>
+    <!-- 国际化文件 -->
+    <constant name="struts.custom.i18n.resources" value="messages"/>
+    <!-- 动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+    <package name="bos" extends="json-default">
+
+        <!--&lt;!&ndash;配置自定义的json解析的结果集类型&ndash;&gt;-->
+        <!--<result-types>-->
+        <!--<result-type name="fastjson"-->
+        <!--class="com.sirier.web.jsonResult.FastjsonResult">-->
+        <!--</result-type>-->
+        <!--</result-types>-->
+
+        <!--<interceptors>-->
+        <!--<interceptor name="loginInterceptor"-->
+        <!--class="com.sirier.web.interceptor.LoginInterceptor">-->
+        <!--<param name="excludeMethods">login</param>-->
+        <!--</interceptor>-->
+        <!--<interceptor-stack name="myStack">-->
+        <!--<interceptor-ref name="loginInterceptor"/>-->
+        <!--<interceptor-ref name="defaultStack"/>-->
+        <!--</interceptor-stack>-->
+        <!--</interceptors>-->
+
+        <!--<default-interceptor-ref name="myStack"/>-->
+
+        <!--<global-results>-->
+        <!--<result name="no_login">/login.jsp</result>-->
+        <!--&lt;!&ndash;配置的接收json的结果集&ndash;&gt;-->
+        <!--<result name="pageQuery" type="fastjson">-->
+        <!--<param name="root">result</param>-->
+        <!--</result>-->
+        <!--</global-results>-->
+
+
+        <!--<action name="page_*_*">-->
+            <!--<result>/WEB-INF/pages/{1}/{2}.jsp</result>-->
+        <!--</action>-->
+
+    </package>
+</struts>
+
+

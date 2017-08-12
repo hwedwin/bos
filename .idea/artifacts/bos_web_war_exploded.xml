@@ -156,6 +156,7 @@
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: com.pinyin4j:pinyin4j:2.5.0" />
           <element id="library" level="project" name="Maven: com.sirierx:sms:1.0" />
+          <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

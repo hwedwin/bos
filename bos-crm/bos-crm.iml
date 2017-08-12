@@ -15,12 +15,12 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext-crm.xml</file>
-          <file>jar://D:/maven/repository/org/apache/cxf/cxf-core/3.0.1/cxf-core-3.0.1.jar!/META-INF/cxf/cxf.xml</file>
-          <file>file://D:/maven/repository/org/apache/cxf/cxf-core/3.0.1/cxf-core-3.0.1.jar</file>
-          <file>jar://D:/maven/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/3.0.1/cxf-rt-frontend-jaxrs-3.0.1.jar!/org/apache/cxf/jaxrs/spring/JaxRsConfig.class</file>
-          <file>file://D:/maven/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/3.0.1/cxf-rt-frontend-jaxrs-3.0.1.jar</file>
-          <file>jar://D:/maven/repository/org/apache/cxf/cxf-rt-transports-http/3.0.1/cxf-rt-transports-http-3.0.1.jar!/META-INF/cxf/cxf-servlet.xml</file>
-          <file>file://D:/maven/repository/org/apache/cxf/cxf-rt-transports-http/3.0.1/cxf-rt-transports-http-3.0.1.jar</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-core/3.0.1/cxf-core-3.0.1.jar!/META-INF/cxf/cxf.xml</file>
+          <file>file://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-core/3.0.1/cxf-core-3.0.1.jar</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-frontend-jaxrs/3.0.1/cxf-rt-frontend-jaxrs-3.0.1.jar!/org/apache/cxf/jaxrs/spring/JaxRsConfig.class</file>
+          <file>file://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-frontend-jaxrs/3.0.1/cxf-rt-frontend-jaxrs-3.0.1.jar</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-transports-http/3.0.1/cxf-rt-transports-http-3.0.1.jar!/META-INF/cxf/cxf-servlet.xml</file>
+          <file>file://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-transports-http/3.0.1/cxf-rt-transports-http-3.0.1.jar</file>
         </fileset>
       </configuration>
     </facet>
