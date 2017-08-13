@@ -25,7 +25,7 @@ import javax.jms.Session;
 @Component("queueSender")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-activeMQ.xml")
-public class QueueSender {
+public class QueueSenderDemo {
 
     @Autowired
     @Qualifier("jmsQueueTemplate")
@@ -53,15 +53,15 @@ public class QueueSender {
 
     @Test
     public void fun() {
-        for (int i = 0; i < 10; i++) {
-            sendText("queueText", "hello");
-        }
-
+        // for (int i = 0; i < 10; i++) {
+        //
+        // }
+        sendText("queue.text", "xiaoshaochong");
         Map<String,String> map = new HashMap<>();
         map.put("1","one");
         map.put("2","two");
         map.put("3","three");
-        sendMap("queueMap",map);
+        sendMap("queue.map",map);
 
     }
 

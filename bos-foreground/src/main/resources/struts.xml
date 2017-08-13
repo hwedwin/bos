@@ -14,40 +14,7 @@
     <!-- 动态方法调用 -->
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
-    <package name="bos" extends="json-default">
-
-        <!--&lt;!&ndash;配置自定义的json解析的结果集类型&ndash;&gt;-->
-        <!--<result-types>-->
-        <!--<result-type name="fastjson"-->
-        <!--class="com.sirier.web.jsonResult.FastjsonResult">-->
-        <!--</result-type>-->
-        <!--</result-types>-->
-
-        <!--<interceptors>-->
-        <!--<interceptor name="loginInterceptor"-->
-        <!--class="com.sirier.web.interceptor.LoginInterceptor">-->
-        <!--<param name="excludeMethods">login</param>-->
-        <!--</interceptor>-->
-        <!--<interceptor-stack name="myStack">-->
-        <!--<interceptor-ref name="loginInterceptor"/>-->
-        <!--<interceptor-ref name="defaultStack"/>-->
-        <!--</interceptor-stack>-->
-        <!--</interceptors>-->
-
-        <!--<default-interceptor-ref name="myStack"/>-->
-
-        <!--<global-results>-->
-        <!--<result name="no_login">/login.jsp</result>-->
-        <!--&lt;!&ndash;配置的接收json的结果集&ndash;&gt;-->
-        <!--<result name="pageQuery" type="fastjson">-->
-        <!--<param name="root">result</param>-->
-        <!--</result>-->
-        <!--</global-results>-->
-
-
-        <!--<action name="page_*_*">-->
-            <!--<result>/WEB-INF/pages/{1}/{2}.jsp</result>-->
-        <!--</action>-->
+    <package name="bos-foreground" extends="json-default">
 
     </package>
 </struts>

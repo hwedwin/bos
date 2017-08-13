@@ -3,7 +3,8 @@
 
 	<head>
 		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>我的速运-注册</title>
 
 		<link rel="stylesheet" type="text/css" href="css/styleloginsign.css">
@@ -14,10 +15,10 @@
 		<script type="text/javascript" src="js/self/effect.js"></script>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 
-		<!--[if IE]>
-    <script  type="text/javascript" src="js/html5.js"></script>
-    <script  type="text/javascript" src="js/respond.min.js"></script>
-    <![endif]-->
+        <!--&lt;!&ndash;[if IE]>-->
+        <!--<script  type="text/javascript" src="js/html5.js"></script>-->
+        <!--<script  type="text/javascript" src="js/respond.min.js"></script>-->
+        <!--<![endif]&ndash;&gt;-->
 	</head>
 
 	<body>
@@ -43,36 +44,46 @@
 
 				<div class="signup" ng-app="signupApp" ng-controller="signupCtrl">
 					<div class="col-md-9 signupbox">
-						<form id="customerForm" action="customer_regist.action" method="post" class="form col-md-6">
+						<form id="customerForm" action="customer_regist.action" method="post"
+                              class="form col-md-6">
 							<div class=" form-group">
-								<label for="inputaccount" class="col-sm-3 control-label"><b>*</b>用户昵称</label>
+								<label for="nickname"
+                                       class="col-sm-3 control-label"><b>*</b>用户昵称</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" name="nickname" ng-model="nickname" id="inputaccount" placeholder="请输入昵称">
+									<input type="text" class="form-control" name="nickname"
+                                           ng-model="nickname" id="nickname" placeholder="请输入昵称">
 								</div>
 							</div>
 							<div class=" form-group">
-								<label for="inputaccount" class="col-sm-3 control-label"><b>*</b>手机号</label>
+								<label for="telephone"
+                                       class="col-sm-3 control-label"><b>*</b>手机号</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" name="telephone" ng-model="telephone" id="telephone" placeholder="请输入手机号">
+									<input type="text" class="form-control" name="telephone"
+                                           ng-model="telephone" id="telephone" placeholder="请输入手机号">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputaccount" class="col-sm-3 control-label"><b>*</b>验证码</label>
+								<label for="checkcode"
+                                       class="col-sm-3 control-label"><b>*</b>验证码</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="inputaccount" placeholder="请输入验证码" name="checkcode">
+									<input type="text" class="form-control" id="checkcode"
+                                           placeholder="请输入验证码" name="checkcode">
 								</div>
 								<div class="col-sm-3 song">
 									<!-- 发送验证码按钮 -->
-									<a  href="#" class="btn btn-default" onclick="getCheckCode(telephone)">
+									<a href="#" class="btn btn-default"
+                                       onclick="sendSMS(telephone)" id="go">
 									 发送验证码
 									</a>
 								</div>
 
 							</div>
 							<div class="form-group">
-								<label for="inputaccount" class="col-sm-3 control-label"><b>*</b>密码</label>
+								<label for="password"
+                                       class="col-sm-3 control-label"><b>*</b>密码</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="inputaccount" placeholder="6-16位数字或英文字母" name="password">
+									<input type="password" class="form-control" id="password"
+                                           placeholder="6-16位数字或英文字母" name="password">
 									<p class="text-right grey">安全强度：*****</p>
 								</div>
 
@@ -81,13 +92,15 @@
 							<div class="form-group">
 								<label for="inputaccount" class="col-sm-3 control-label"><b>*</b>确认密码</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="inputaccount" placeholder="6-16位数字或英文字母">
+									<input type="password" class="form-control" id="inputaccount"
+                                           placeholder="6-16位数字或英文字母">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputaccount" class="col-sm-3 control-label"><b>*</b>绑定邮箱</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="inputemail" placeholder="请输入需要绑定的邮箱" name="email">
+									<input type="email" class="form-control" id="inputemail"
+                                           placeholder="请输入需要绑定的邮箱" name="email">
 								</div>
 							</div>
 							<div class="form-group">
@@ -102,7 +115,8 @@
 							</div>
 							<div class="form-group signbtn">
 								<div class="col-sm-offset-3 col-sm-8 song">
-									<a class="btn btn-danger" href="javascript:$('#customerForm').submit();">注册</a>
+									<a class="btn btn-danger"
+                                       href="javascript:$('#customerForm').submit();">注册</a>
 								</div>
 							</div>
 
@@ -127,7 +141,7 @@
 
 		</div>
 
-		<!--foot-->
+        <!--foot-->
 		<footer>
 			<section class="copyright size12">
 				<div class="container">
@@ -138,9 +152,68 @@
 		</footer>
 
 		<script type="text/javascript">
-		  function getCheckCode(obj){
-			  alert(obj.value);
-		  }
+
+
+		var active = true;//  判断按钮是否可以120s之内点击
+        var second = 120; // 倒计时120秒
+        var secondInterval;
+
+
+        function sendSMS(obj) {
+            //alert(obj.value);
+            if (active == false) {
+                return;
+            }
+            //  发送短信给用户手机..
+            // 1 发送一个HTTP请求，通知服务器 发送短信给目标用户
+            var regex = /^1(3|5|7|8)\d{9}$/;
+            //var telephone = $("input[name='telephone']").val();// 获取用户输入的手机号
+            var telephone = obj.value;
+            alert(telephone);
+            if (telephone != '' && regex.test(telephone)) {
+                alert(2);
+                // 校验通过
+                $.ajax({
+                    method: 'POST',
+                    url: 'customerAction_sendCode.action',// 发送验证码
+                    //url: 'index.html',// 发送验证码
+                    data: {
+                        "telephone": telephone
+                    },
+                    success: function (data) {
+                        if (true) {
+                            alert("恭喜!");
+                            active = true;
+                            if (active) {
+                                active = false;
+                                secondInterval = setInterval(function () {
+                                    if (second < 0) {
+                                        // 倒计时结束，允许重新发送
+                                        $("#go").html("发送验证码");
+                                        active = true;
+                                        second = 120;
+                                        // 关闭定时器
+                                        clearInterval(secondInterval);
+                                        secondInterval = undefined;
+                                    } else {
+                                        // 继续计时
+                                        $("#go").html(second + "秒后重发");
+                                        second--;
+                                    }
+                                }, 1000);
+                            }
+                        } else {
+                            alert("发送短信出错，重新操作....");
+                            active = false;
+                        }
+                    }
+                });
+            } else {
+                // 校验失败
+                alert("警告");
+                return;
+            }
+        }
 		</script>
 	</body>
 
