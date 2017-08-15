@@ -1,6 +1,7 @@
 package com.sirier.web.action;
 
 import com.sirier.domain.Customer;
+import com.sirier.utils.RandStringUtils;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;

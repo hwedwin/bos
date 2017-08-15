@@ -71,12 +71,14 @@
       <w>shortcode</w>
       <w>showid</w>
       <w>sirier</w>
+      <w>smsnumber</w>
       <w>startnum</w>
       <w>tmpdir</w>
       <w>updatetime</w>
       <w>validatebox</w>
       <w>workbill</w>
       <w>workordermanage</w>
+      <w>workordermanager</w>
     </words>
   </dictionary>
 </component>

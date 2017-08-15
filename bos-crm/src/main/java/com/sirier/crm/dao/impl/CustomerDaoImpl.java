@@ -41,8 +41,8 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
     public void assignedCustomerToDecidedzone(String decidezoneId, Integer customerId) {
         String hql = "update Customer set  decidedzoneId = ?  where id = ? ";
         Query query = getSession().createQuery(hql);
-        query.setParameter(0,decidezoneId);
-        query.setParameter(1,customerId);
+        query.setParameter(0, decidezoneId);
+        query.setParameter(1, customerId);
         query.executeUpdate();
     }
 
@@ -50,7 +50,16 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
     public void cancleCustomerToDecidedzone(String decidezoneId) {
         String hql = "update Customer set  decidedzoneId = null  where decidedzoneId = ? ";
         Query query = getSession().createQuery(hql);
-        query.setParameter(0,decidezoneId);
+        query.setParameter(0, decidezoneId);
         query.executeUpdate();
+    }
+
+    @Override
+    public List<Customer> getCustomerByAddress(String address) {
+        String hql = "from Customer where address = ?";
+        List<Customer> list = this.getHibernateTemplate().find(hql, address);
+        //判断一下
+        System.out.println("list = " + list);
+        return list;
     }
 }

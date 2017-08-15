@@ -58,7 +58,6 @@
         </dependency>
 
 
-
         <!-- 日志 -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -294,17 +293,20 @@
             <version>2.5.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.sirierx</groupId>
-            <artifactId>sms</artifactId>
-            <version>1.0</version>
-        </dependency>
         <!--sms自己的短信工具包-->
+
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
             <version>3.2.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.sirierx</groupId>
+            <artifactId>sms</artifactId>
+            <version>1.0</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -350,7 +352,7 @@
         <pluginManagement>
             <plugins>
                 <!-- hibernate tools 插件 -->
-                           <plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>hibernate3-maven-plugin</artifactId>
                     <version>2.2</version>

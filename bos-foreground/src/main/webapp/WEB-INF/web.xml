@@ -9,7 +9,9 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:applicationContext.xml
+            classpath:applicationContext-activeMQ.xml,
+            classpath:applicationContext-redis.xml,
+            classpath:applicationContext-dao.xml
         </param-value>
     </context-param>
     <!-- spring核心监听器 -->

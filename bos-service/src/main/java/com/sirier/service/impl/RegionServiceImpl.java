@@ -1,6 +1,6 @@
 package com.sirier.service.impl;
 
-import com.sirier.dao.RegionDao;
+import com.sirier.dao.IRegionDao;
 import com.sirier.domain.Region;
 import com.sirier.service.RegionService;
 import com.sirier.utils.FastJsonUtils;
@@ -28,7 +28,7 @@ import java.util.Map;
 public class RegionServiceImpl implements RegionService {
 
     @Autowired
-    private RegionDao regionDao;
+    private IRegionDao regionDao;
     @Autowired
     private RedisTemplate redisTemplate;
 

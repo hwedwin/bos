@@ -18,7 +18,8 @@ jdbc.properties和reveng.xml
     <!--<schema-selection match-table="crm_customers" match-catalog="bos2"/>-->
     <!--&lt;!&ndash; 反向生成Customer &ndash;&gt;-->
     <!--<schema-selection  match-table="customers"  match-catalog="bos2"/>-->
-    <schema-selection  match-table="qp_.*"  match-catalog="bos2"/>
+    <!--<schema-selection  match-table="t_order"  match-catalog="bos2"/>-->
+    <schema-selection  match-table="qp_workordermanage"  match-catalog="bos2"/>
     <!--&lt;!&ndash; 权限表生成 &ndash;&gt;-->
     <!--<schema-selection  match-table="auth_.*"  match-catalog="bos2"/>-->
     <!--<schema-selection  match-table="role_function"  match-catalog="bos2"/>-->
@@ -115,23 +116,29 @@ jdbc.properties和reveng.xml
 
 
      <!--取派模块 -->
-         <table name="qp_noticebill" catalog="bos2"
-     		class="com.sirier.domain.NoticeBill">
-     		<primary-key>
-     			<generator class="uuid"></generator>
-     		</primary-key>
-     	</table>
-         <table name="qp_workbill" catalog="bos2"
-     		class="com.sirier.domain.WorkBill">
-     		<primary-key>
-     			<generator class="uuid"></generator>
-     		</primary-key>
-     	</table>
+         <!--<table name="qp_noticebill" catalog="bos2"-->
+     		<!--class="com.sirier.domain.NoticeBill">-->
+     		<!--<primary-key>-->
+     			<!--<generator class="uuid"></generator>-->
+     		<!--</primary-key>-->
+     	<!--</table>-->
+         <!--<table name="qp_workbill" catalog="bos2"-->
+     		<!--class="com.sirier.domain.WorkBill">-->
+     		<!--<primary-key>-->
+     			<!--<generator class="uuid"></generator>-->
+     		<!--</primary-key>-->
+     	<!--</table>-->
          <table name="qp_workordermanage" catalog="bos2"
      		class="com.sirier.domain.WorkOrderManage">
      		<primary-key>
      			<generator class="uuid"></generator>
      		</primary-key>
      	</table>
+         <!--<table name="t_order" catalog="bos2"-->
+     		<!--class="com.sirier.domain.Order">-->
+     		<!--<primary-key>-->
+     			<!--<generator class="uuid"></generator>-->
+     		<!--</primary-key>-->
+     	<!--</table>-->
 
 </hibernate-reverse-engineering>

@@ -19,7 +19,7 @@ public interface CustomerService {
      * @return
      */
     @GET
-    @Path("/customer")
+    @Path("/customer/getListNotAssociation")
     @Produces({ "application/xml", "application/json" })
     List<Customer> getListNotAssociation();
 
@@ -29,7 +29,7 @@ public interface CustomerService {
      * @return
      */
     @GET
-    @Path("/customer/{decidezoneId}")
+    @Path("/customer/getListHasAssociation/{decidezoneId}")
     @Consumes({ "application/xml", "application/json" })
     @Produces({ "application/xml", "application/json" })
     List<Customer> getListHasAssociation(@PathParam("decidezoneId") String decidezoneId);
@@ -40,10 +40,15 @@ public interface CustomerService {
      * @param decidezoneId
      */
     @PUT
-    @Path("/customer/{decidezoneId}/{cIds}")
+    @Path("/customer/assignedCustomerToDecidedzone/{decidezoneId}/{cIds}")
     @Consumes({ "application/xml", "application/json" })
     public void assignedCustomerToDecidedzone(@PathParam("decidezoneId") String decidezoneId,
                                               @PathParam("cIds") String customerIds);
 
+    @GET
+    @Path("/customer/getCustomerByAddress/{address}")
+    @Consumes({ "application/xml", "application/json" })
+    @Produces({ "application/xml", "application/json" })
+    public List<Customer> getCustomerByAddress(@PathParam("address") String address);
 
 }

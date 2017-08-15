@@ -17,6 +17,17 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+    <servlet>
+        <servlet-name>CXFService</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CXFService</servlet-name>
+        <url-pattern>/rs/*</url-pattern>
+    </servlet-mapping>
+
+
     <!-- struts核心控制器 -->
     <filter>
         <filter-name>struts2</filter-name>
@@ -25,7 +36,11 @@
     </filter>
     <filter-mapping>
         <filter-name>struts2</filter-name>
-        <url-pattern>/*</url-pattern>
+
+        <!--需要改变拦截路径,以避免拦截到了cxf服务请求-->
+        <!--可以在这里修改拦截路径,也可以在struts.xml里配置不拦截的路径-->
+        <url-pattern>*.action</url-pattern>
+        <!--<url-pattern>/*</url-pattern>-->
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>

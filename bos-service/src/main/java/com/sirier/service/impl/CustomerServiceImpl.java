@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import javax.ws.rs.core.MediaType;
+
 /**
  * Created by Sirierx on 2017/8/11.
  */
@@ -17,26 +19,39 @@ import java.util.List;
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 
-    private static String url = "http://localhost:9988/crm/rs/customerService/customer";
+    private String url = "http://localhost:9988/crm/rs/customerService/customer";
 
     @Override
     public List<Customer> getListNotAssociation() {
-        List<Customer> list = (List<Customer>)WebClient.create(url).getCollection(Customer
-                .class);
-        LogUtils.getInstance().warn("customerServiceImpl+------->"+list);
+        List<Customer> list = (List<Customer>)WebClient.create(url + "/getListNotAssociation")
+                .getCollection(Customer
+                        .class);
+        LogUtils.getInstance().warn("customerServiceImpl+------->" + list);
         return list;
     }
 
     @Override
     public List<Customer> getListHasAssociation(String decidezoneId) {
-        List<Customer> list = (List<Customer>)WebClient.create(url+"/" + decidezoneId).getCollection(Customer
-                .class);
+        List<Customer> list = (List<Customer>)WebClient.create(url + "/getListHasAssociation/" +
+                decidezoneId)
+                .getCollection(Customer
+                        .class);
         return list;
     }
 
     @Override
     public void assignedCustomerToDecidedzone(String decidezoneId, String customerIds) {
         //因为没有实体,所以直接put(null)
-        WebClient.create(url+"/" + decidezoneId + "/" + customerIds).put(null);
+        WebClient.create(url + "/assignedCustomerToDecidedzone/" + decidezoneId + "/" +
+                customerIds).put(null);
+    }
+
+    @Override
+    public Customer getCustomerByAddress(String allAddress) {
+        List<Customer> list = (List<Customer>)WebClient
+                .create(url +"/getCustomerByAddress/" + allAddress)
+                .accept(MediaType.APPLICATION_JSON_TYPE).getCollection(Customer.class);
+        System.out.println("list = " + list);
+        return list.isEmpty() ? null : list.get(0);
     }
 }

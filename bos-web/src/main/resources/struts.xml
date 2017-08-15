@@ -14,18 +14,21 @@
     <!-- 动态方法调用 -->
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
+    <!--通过下面的配置,可以排除路径的拦截 下面这个可以排除拦截所有service服务访问-->
+    <!--<constant name="struts.action.excludePattern" value="/*Service"></constant>-->
+
     <package name="bos" extends="json-default">
 
         <!--配置自定义的json解析的结果集类型-->
         <result-types>
             <result-type name="fastjson"
-                         class="com.sirier.web.jsonResult.FastjsonResult">
+                         class="com.sirier.web.action.jsonResult.FastjsonResult">
             </result-type>
         </result-types>
 
         <interceptors>
             <interceptor name="loginInterceptor"
-                         class="com.sirier.web.interceptor.LoginInterceptor">
+                         class="com.sirier.web.action.interceptor.LoginInterceptor">
                 <param name="excludeMethods">login</param>
             </interceptor>
             <interceptor-stack name="myStack">

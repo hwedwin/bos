@@ -26,10 +26,10 @@
       <module name="bos-foreground" target="1.7" />
       <module name="bos-redis" target="1.7" />
       <module name="bos-service" target="1.7" />
-      <module name="bos-sms" target="1.7" />
+      <module name="bos-sms" target="1.5" />
       <module name="bos-utils" target="1.7" />
       <module name="bos-web" target="1.7" />
-      <module name="sms" target="1.7" />
+      <module name="sms" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

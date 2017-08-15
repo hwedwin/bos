@@ -1,5 +1,5 @@
 package com.sirier.domain;
-// Generated 2017-8-12 21:54:27 by Hibernate Tools 3.2.2.GA
+// Generated 2017-8-15 19:42:56 by Hibernate Tools 3.2.2.GA
 
 
 import org.hibernate.annotations.GenericGenerator;

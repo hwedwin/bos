@@ -17,10 +17,11 @@ public interface CustomerDao {
     public List<Customer> getListHasAssociation(String decidezoneId);
 
     // 定区绑定客户
-    public void assignedCustomerToDecidedzone(String decidedzoneId,Integer customerId);
+    public void assignedCustomerToDecidedzone(String decidedzoneId, Integer customerId);
 
     // 取消定区关联所有客户
     public void cancleCustomerToDecidedzone(String decidedzoneId);
 
-
+    //通过address获取customer对象
+    List<Customer> getCustomerByAddress(String address);
 }

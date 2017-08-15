@@ -1,4 +1,4 @@
-package com.sirier.web.action;
+package com.sirier.utils;
 
 import java.util.Random;
 

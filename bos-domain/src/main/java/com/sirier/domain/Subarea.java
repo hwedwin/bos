@@ -79,7 +79,7 @@ public class Subarea implements java.io.Serializable {
         this.region = region;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "DECIDEDZONE_ID")
     @JSONField(serialize = false)
     public DecidedZone getDecidedZone() {

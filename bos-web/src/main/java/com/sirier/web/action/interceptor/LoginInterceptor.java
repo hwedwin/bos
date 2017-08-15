@@ -1,4 +1,4 @@
-package com.sirier.web.interceptor;
+package com.sirier.web.action.interceptor;
 
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.ActionSupport;

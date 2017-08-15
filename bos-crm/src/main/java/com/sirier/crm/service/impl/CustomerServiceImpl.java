@@ -42,4 +42,10 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    @Override
+    public List<Customer> getCustomerByAddress(String address) {
+        List<Customer> list = customerDao.getCustomerByAddress(address);
+        return list;
+    }
+
 }

@@ -42,4 +42,6 @@ public interface CustomerService {
     public void assignedCustomerToDecidedzone(String decidezoneId, String customerIds);
 
 
+    Customer getCustomerByAddress(String allAddress);
+
 }
