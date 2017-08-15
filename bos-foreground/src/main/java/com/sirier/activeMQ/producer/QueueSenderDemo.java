@@ -23,16 +23,16 @@ import javax.jms.Session;
  */
 
 @Component("queueSender")
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:applicationContext-activeMQ.xml")
-public class QueueSenderDemo {
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @ContextConfiguration("classpath:applicationContext-activeMQ.xml")
+    public class QueueSenderDemo {
 
-    @Autowired
-    @Qualifier("jmsQueueTemplate")
-    private JmsTemplate jmsTemplate;
+        @Autowired
+        @Qualifier("jmsQueueTemplate")
+        private JmsTemplate jmsTemplate;
 
 
-    public void sendText(String queueName, final String message) {
+        public void sendText(String queueName, final String message) {
         jmsTemplate.send(queueName, new MessageCreator() {
             public Message createMessage(Session session) throws JMSException {
                 return session.createTextMessage(message);

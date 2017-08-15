@@ -13,8 +13,8 @@ import javax.jms.MessageListener;
  * Created by Sirierx on 2017/8/12.
  */
 
-@Component("queueReceiver")
-public class QueueReceiver implements MessageListener {
+@Component("queueReceiver1")
+public class QueueReceiver1 implements MessageListener {
     public void onMessage(Message message) {
 
         String telephone = null;
@@ -26,7 +26,7 @@ public class QueueReceiver implements MessageListener {
 
             System.out.println("telephone = " + telephone);
             System.out.println("checkCode = " + checkCode);
-            SendSmsResponse response = SendSmsUtils.sendSms(telephone, checkCode);
+            SendSmsResponse response = SendSmsUtils.sendSms1(telephone, checkCode);
 
             System.out.println("短信接口返回的数据----------------");
             System.out.println("Code=" + response.getCode());

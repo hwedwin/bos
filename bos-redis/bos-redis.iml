@@ -150,5 +150,9 @@
     <orderEntry type="library" name="Maven: com.pinyin4j:pinyin4j:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.3" level="project" />
     <orderEntry type="library" name="Maven: com.sirierx:sms:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jms:4.2.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:4.2.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.activemq:activemq-all:5.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xbean:xbean-spring:3.7" level="project" />
   </component>
 </module>

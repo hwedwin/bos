@@ -32,11 +32,11 @@ public class SendSmsUtils {
     //产品域名,开发者无需替换
     static final String domain = "dysmsapi.aliyuncs.com";
 
-    static final String accessKeyId = ResourceBundle.getBundle("sms").getString("accessKeyId");
-    static final String accessKeySecret = ResourceBundle.getBundle("sms").getString
+    static final String accessKeyId = ResourceBundle.getBundle("sms2").getString("accessKeyId");
+    static final String accessKeySecret = ResourceBundle.getBundle("sms2").getString
             ("accessKeySecret");
 
-    public static SendSmsResponse sendSms(String telephone, String name) throws ClientException {
+    public static SendSmsResponse sendSms1(String telephone, String name) throws ClientException {
         SendSmsResponse sendSmsResponse = null;
         try {
             //可自助调整超时时间
@@ -54,17 +54,55 @@ public class SendSmsUtils {
             //必填:待发送手机号
             request.setPhoneNumbers(telephone);
             //必填:短信签名-可在短信控制台中找到
-             request.setSignName(ResourceBundle.getBundle("sms").getString("signName"));
+            request.setSignName(ResourceBundle.getBundle("sms1").getString("signName"));
             //request.setSignName("肖少冲");
             //必填:短信模板-可在短信控制台中找到
-            request.setTemplateCode(ResourceBundle.getBundle("sms").getString("templateCode"));
+            request.setTemplateCode(ResourceBundle.getBundle("sms1").getString("templateCode"));
             //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
-            request.setTemplateParam(ResourceBundle.getBundle("sms").getString("templateParam1")
-                    +name+ResourceBundle.getBundle("sms").getString("templateParam2"));
+            request.setTemplateParam(ResourceBundle.getBundle("sms1").getString("templateParam1")
+                    + name + ResourceBundle.getBundle("sms1").getString("templateParam2"));
             //可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
             request.setOutId("yourOutId");
 
             //hint 此处可能会抛出异常，注意catch
+            sendSmsResponse = acsClient.getAcsResponse(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+            new RuntimeException("短信发送模块报错-->" + e);
+        }
+        return sendSmsResponse;
+    }
+
+    public static SendSmsResponse sendSms2(String telephone, String sendName, String date, String
+            address) throws ClientException {
+        SendSmsResponse sendSmsResponse = null;
+        try {
+            //可自助调整超时时间
+            System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
+            System.setProperty("sun.net.client.defaultReadTimeout", "10000");
+
+            //初始化acsClient,暂不支持region化
+            IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId,
+                    accessKeySecret);
+            DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
+            IAcsClient acsClient = new DefaultAcsClient(profile);
+
+            //组装请求对象-具体描述见控制台-文档部分内容
+            SendSmsRequest request = new SendSmsRequest();
+
+            //必填:待发送手机号
+            request.setPhoneNumbers(telephone);
+            request.setTemplateCode(ResourceBundle.getBundle("sms2").getString("templateCode"));
+            //必填:短信签名-可在短信控制台中找到
+            request.setSignName(ResourceBundle.getBundle("sms2").getString("signName"));
+            request.setTemplateParam(
+                    ResourceBundle.getBundle("sms2").getString("templateParam1") + sendName +
+                            ResourceBundle.getBundle("sms2").getString("templateParam2") + date +
+                            ResourceBundle.getBundle("sms2").getString("templateParam3")
+                            + address +
+                            ResourceBundle.getBundle("sms2").getString("templateParam4")
+            );
+            request.setOutId("yourOutId");
             sendSmsResponse = acsClient.getAcsResponse(request);
         } catch (Exception e) {
             e.printStackTrace();
@@ -110,7 +148,10 @@ public class SendSmsUtils {
     public static void main(String[] args) throws ClientException {
 
         //发短信
-        SendSmsResponse response = sendSms("18818070523","sirierx");
+        SendSmsResponse response = sendSms2("18818070523", "sirierx1", "sirierx2",
+         "sirierx3");
+        //SendSmsResponse response = sendSms1("18818070523", "sirierx1");
+
         System.out.println("短信接口返回的数据----------------");
         System.out.println("Code=" + response.getCode());
         System.out.println("Message=" + response.getMessage());

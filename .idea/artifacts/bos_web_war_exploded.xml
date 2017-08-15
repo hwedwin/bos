@@ -19,6 +19,9 @@
           <element id="archive" name="bos-domain-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-domain" />
           </element>
+          <element id="archive" name="bos-activeMQ-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="bos-activeMQ" />
+          </element>
           <element id="archive" name="bos-redis-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-redis" />
           </element>
@@ -157,6 +160,10 @@
           <element id="library" level="project" name="Maven: com.pinyin4j:pinyin4j:2.5.0" />
           <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.3" />
           <element id="library" level="project" name="Maven: com.sirierx:sms:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jms:4.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.activemq:activemq-all:5.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.xbean:xbean-spring:3.7" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -28,9 +28,16 @@
     <!-- Queue配置消费者 字符数据 -->
     <jms:listener-container destination-type="queue" container-type="default"
                             connection-factory="connectionFactory" acknowledge="auto">
-        <jms:listener destination="checkCode" ref="queueReceiver"/>
-        <jms:listener destination="queue.text" ref="queueReceiver"/>
-        <jms:listener destination="queue.map" ref="queueReceiver"/>
+        <jms:listener destination="queue.text" ref="queueReceiver1"/>
+        <jms:listener destination="queue.map" ref="queueReceiver1"/>
+
+
+        <jms:listener destination="checkCode" ref="queueReceiver1"/>
+        <jms:listener destination="successSms" ref="queueReceiver2"/>
+
+
+
+
     </jms:listener-container>
 
 </beans>

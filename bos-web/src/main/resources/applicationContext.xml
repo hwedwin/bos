@@ -8,4 +8,6 @@
 	<import resource="applicationContext-dao.xml"/>
 	<import resource="applicationContext-service.xml"/>
 	<import resource="applicationContext-redis.xml"/>
+	<import resource="applicationContext-activeMQ.xml"/>
+
 </beans>

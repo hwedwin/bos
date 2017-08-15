@@ -7,7 +7,7 @@
           <element id="module-output" name="bos-sms" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: com.sirierx:sms:1.0" />
+          <element id="library" level="project" name="Maven: com.sirierx:sms:2.0" />
           <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.3" />
           <element id="library" level="project" name="Maven: junit:junit:4.11" />
           <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />

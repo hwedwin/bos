@@ -16,12 +16,21 @@ import com.sirier.service.OrderService;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
+
+import javax.jms.JMSException;
+import javax.jms.MapMessage;
+import javax.jms.Message;
+import javax.jms.Session;
 
 /**
  * Created by Sirierx on 2017/8/15.
@@ -41,6 +50,9 @@ public class OrderServiceImpl implements OrderService {
     private IWorkBillDao workBillDao;
     @Autowired
     private IRegionDao regionDao;
+    @Autowired
+    @Qualifier("jmsQueueTemplate")
+    private JmsTemplate jmsTemplate;
 
 
     @Override
@@ -77,7 +89,10 @@ public class OrderServiceImpl implements OrderService {
                 order.setStaff(staff);
                 order.setOrderType("自动分单1");//order无须手动保存,事务关闭时会自动关闭
 
+                //把短信内容放到mq中,然后在短信模块接收mq,那边发短信,这边只管封装
                 //sendSuccessSmsByMQ();
+                sendSuccessSmsByMQ(order, staff);
+
                 return;//成功了就直接return掉
             }
         }
@@ -104,6 +119,7 @@ public class OrderServiceImpl implements OrderService {
                         order.setOrderType("自动分单2");
                         //order自动提交保存
                         //sendSuccessSmsByMQ();
+                        sendSuccessSmsByMQ(order, staff);
                     }
                 }
             }
@@ -111,6 +127,25 @@ public class OrderServiceImpl implements OrderService {
         }
         //如果自动分单都成功了,那肯定不会到这里
         order.setOrderType("人工调度");
+    }
+
+    private void sendSuccessSmsByMQ(Order order, Staff staff) {
+        final HashMap<String,String> map = new HashMap<>();
+        //存放的key和短信模版最好一样
+        map.put("telephone", staff.getTelephone());
+        map.put("sendName", order.getSendName());
+        map.put("date", new Date().toString());
+        map.put("address", order.getRecAddress());
+
+        jmsTemplate.send("successSms", new MessageCreator() {
+            public Message createMessage(Session session) throws JMSException {
+                MapMessage message = session.createMapMessage();
+                for (String key : map.keySet()) {
+                    message.setString(key, map.get(key));
+                }
+                return message;
+            }
+        });
     }
 
 
