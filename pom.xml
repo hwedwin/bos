@@ -207,6 +207,12 @@
             <version>${hibernate-search.version}</version>
         </dependency>
         <!-- ik分词器 中文分词 索引查询 下载jar 手动打包本地仓库 -->
+        <dependency>
+            <groupId>com.sirierx</groupId>
+            <artifactId>ikanalyzer</artifactId>
+            <version>2012_u6</version>
+        </dependency>
+        <!-- ik分词器  中文分词 索引查询 下载jar  手动打包本地仓库 -->
 
         <!-- shiro -->
         <dependency>

@@ -24,6 +24,9 @@ public class ManageService {
     private DecidedzoneService decidedzoneService;
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private WorkOrderService workOrderService;
+
 
     public SubareaService getSubareaService() {
         return subareaService;
@@ -51,5 +54,9 @@ public class ManageService {
 
     public CustomerService getCustomerService() {
         return customerService;
+    }
+
+    public WorkOrderService getWorkOrderService() {
+        return workOrderService;
     }
 }

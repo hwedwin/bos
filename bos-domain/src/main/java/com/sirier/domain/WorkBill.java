@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * @description:工单
+ * 工单-->即订单下发至快递员
  */
 @Entity
 @Table(name = "T_WORKBILL", catalog = "bos2")

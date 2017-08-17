@@ -55,6 +55,10 @@ public class OrderServiceImpl implements OrderService {
     private JmsTemplate jmsTemplate;
 
 
+    /**
+     * 自动分单的业务逻辑,包含order的保存,workbill的保存,短信的发送
+     * @param order
+     */
     @Override
     public void Save(Order order) {
         System.out.println("order = " + order);

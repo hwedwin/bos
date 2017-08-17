@@ -117,6 +117,7 @@
     <orderEntry type="library" name="Maven: com.google.guava:guava:r05" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-smartcn:3.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-stempel:3.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sirierx:ikanalyzer:2012_u6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-all:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-guice:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.2" level="project" />

@@ -59,11 +59,14 @@
       <w>pickstate</w>
       <w>prodtimelimit</w>
       <w>prodtype</w>
+      <w>quickworkorder</w>
+      <w>qupai</w>
       <w>receiveraddr</w>
       <w>receivername</w>
       <w>receiverphone</w>
       <w>reveng</w>
       <w>rownumbers</w>
+      <w>searchbox</w>
       <w>senderaddr</w>
       <w>sendername</w>
       <w>senderphone</w>

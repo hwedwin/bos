@@ -4,7 +4,7 @@
        xmlns:amq="http://activemq.apache.org/schema/core"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
 		http://activemq.apache.org/schema/core
-        http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd">
+        http://activemq.apache.org/schema/core/activemq-core.xsd">
 
     <amq:connectionFactory id="amqConnectionFactory" brokerURL="tcp://localhost:61616" userName="admin" password="admin"  />
     <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">

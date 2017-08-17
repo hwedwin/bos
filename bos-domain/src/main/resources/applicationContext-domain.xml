@@ -2,11 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--spring扫描包-->
     <context:component-scan base-package="com.sirier.domain"/>
@@ -40,15 +39,17 @@
                 <!-- sql打印 -->
                 <property name="showSql" value="true"/>
             </bean>
+
         </property>
 
-        <!--&lt;!&ndash; 配置索引库磁盘位置 &ndash;&gt;-->
-        <!--<property name="jpaProperties">-->
-        <!--<props>-->
-        <!--<prop key="hibernate.search.default.indexBase">d:/myindex</prop>-->
-        <!--&lt;!&ndash; 		    <prop key="hibernate.search.default.indexBase">/root/myindex_heima02</prop> &ndash;&gt;-->
-        <!--</props>-->
-        <!--</property>-->
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.search.default.indexBase">
+                    E:/a
+                    <!--路径记得转义-->
+                </prop>
+            </props>
+        </property>
 
     </bean>
 </beans>
