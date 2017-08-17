@@ -28,11 +28,12 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext-dao.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext-service.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/../bos-domain/src/main/resources/applicationContext-domain.xml</file>
           <file>file://$MODULE_DIR$/../bos-redis/src/main/resources/applicationContext-redis.xml</file>
           <file>file://$MODULE_DIR$/../bos-activeMQ/src/main/resources/applicationContext-activeMQ.xml</file>
+          <file>file://$MODULE_DIR$/../bos-utils/src/main/resources/applicationContext-quartz.xml</file>
+          <file>file://$MODULE_DIR$/../bos-service/src/main/resources/applicationContext-service.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -177,6 +178,8 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-smartcn:3.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-stempel:3.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.sirierx:ikanalyzer:2012_u6" level="project" />
+    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz-jobs:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-all:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-guice:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.2" level="project" />

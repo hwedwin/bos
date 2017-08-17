@@ -214,6 +214,18 @@
         </dependency>
         <!-- ik分词器  中文分词 索引查询 下载jar  手动打包本地仓库 -->
 
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
+
         <!-- shiro -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
