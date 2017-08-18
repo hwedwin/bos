@@ -9,13 +9,14 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <bean id="jobDetail"
           class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-        <property name="targetObject" ref="sendEmail"/>
-        <property name="targetMethod" value="SendEmail"/>
+        <property name="targetObject" ref="MyJobs"/>
+        <property name="targetMethod" value="mySendEmailJob"/>
     </bean>
 
     <bean id="myTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="jobDetail"/>
-        <property name="cronExpression" value="0/5 * * * * ?">
+        <!--<property name="cronExpression" value="0/50 * * * * ?">-->
+            <property name="cronExpression" value="0 0 1 * * ?">
         </property>
     </bean>
 

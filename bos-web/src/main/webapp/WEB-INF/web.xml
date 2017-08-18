@@ -28,6 +28,21 @@
     </servlet-mapping>
 
 
+    <!--shiro的配置-->
+    <filter>
+        <filter-name>shiroSecurityFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiroSecurityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
     <!-- struts核心控制器 -->
     <filter>
         <filter-name>struts2</filter-name>
@@ -40,6 +55,7 @@
         <!--需要改变拦截路径,以避免拦截到了cxf服务请求-->
         <!--可以在这里修改拦截路径,也可以在struts.xml里配置不拦截的路径-->
         <url-pattern>*.action</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
         <!--<url-pattern>/*</url-pattern>-->
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>

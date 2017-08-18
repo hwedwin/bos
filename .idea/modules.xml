@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/bos-quartz/bos-quartz.iml" filepath="$PROJECT_DIR$/bos-quartz/bos-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-redis/bos-redis.iml" filepath="$PROJECT_DIR$/bos-redis/bos-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-service/bos-service.iml" filepath="$PROJECT_DIR$/bos-service/bos-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bos-shiro/bos-shiro.iml" filepath="$PROJECT_DIR$/bos-shiro/bos-shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-sms/bos-sms.iml" filepath="$PROJECT_DIR$/bos-sms/bos-sms.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-utils/bos-utils.iml" filepath="$PROJECT_DIR$/bos-utils/bos-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-web/bos-web.iml" filepath="$PROJECT_DIR$/bos-web/bos-web.iml" />

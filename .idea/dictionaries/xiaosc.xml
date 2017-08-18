@@ -10,6 +10,7 @@
       <w>arrivecity</w>
       <w>assigncustomerstodecidedzone</w>
       <w>attachbilltimes</w>
+      <w>authc</w>
       <w>belerweb</w>
       <w>brokeurl</w>
       <w>buildtime</w>
@@ -76,6 +77,7 @@
       <w>sirier</w>
       <w>smsnumber</w>
       <w>startnum</w>
+      <w>starttls</w>
       <w>tmpdir</w>
       <w>updatetime</w>
       <w>validatebox</w>

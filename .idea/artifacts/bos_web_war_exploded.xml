@@ -28,6 +28,9 @@
           <element id="archive" name="bos-redis-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-redis" />
           </element>
+          <element id="archive" name="bos-shiro-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="bos-shiro" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
@@ -60,7 +63,6 @@
           <element id="library" level="project" name="Maven: asm:asm:3.3" />
           <element id="library" level="project" name="Maven: asm:asm-commons:3.3" />
           <element id="library" level="project" name="Maven: asm:asm-tree:3.3" />
-          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.19" />
           <element id="library" level="project" name="Maven: ognl:ognl:3.0.6" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.11.0.GA" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
@@ -161,6 +163,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.6" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.20" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: com.pinyin4j:pinyin4j:2.5.0" />

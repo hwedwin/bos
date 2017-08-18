@@ -10,4 +10,6 @@
     <import resource="applicationContext-redis.xml"/>
     <import resource="applicationContext-activeMQ.xml"/>
     <import resource="applicationContext-quartz.xml"/>
+    <import resource="applicationContext-shiro.xml"/>
+    <import resource="applicationContext-email.xml"/>
 </beans>
