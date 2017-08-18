@@ -359,6 +359,7 @@
         <module>bos-dao</module>
         <module>bos-redis</module>
         <module>bos-activeMQ</module>
+        <module>bos-quartz</module>
     </modules>
 
 

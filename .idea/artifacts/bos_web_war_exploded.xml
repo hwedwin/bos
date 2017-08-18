@@ -22,6 +22,9 @@
           <element id="archive" name="bos-activeMQ-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-activeMQ" />
           </element>
+          <element id="archive" name="bos-quartz-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="bos-quartz" />
+          </element>
           <element id="archive" name="bos-redis-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-redis" />
           </element>

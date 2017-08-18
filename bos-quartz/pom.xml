@@ -8,10 +8,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bos-activeMQ</artifactId>
+    <artifactId>bos-quartz</artifactId>
     <packaging>jar</packaging>
 
-    <name>bos-activeMQ</name>
+    <name>bos-quartz</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -24,17 +24,6 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sirier</groupId>
-            <artifactId>bos-quartz</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

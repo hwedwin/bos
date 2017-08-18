@@ -10,5 +10,4 @@
     <import resource="applicationContext-redis.xml"/>
     <import resource="applicationContext-activeMQ.xml"/>
     <import resource="applicationContext-quartz.xml"/>
-
 </beans>

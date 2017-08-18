@@ -1,4 +1,4 @@
-package com.sirier.utils;
+package com.sirier.quartz;
 
 import org.springframework.stereotype.Component;
 

@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="bos-utils" />
     <orderEntry type="module" module-name="bos-domain" />
     <orderEntry type="module" module-name="bos-activeMQ" />
+    <orderEntry type="module" module-name="bos-quartz" />
     <orderEntry type="module" module-name="bos-redis" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />

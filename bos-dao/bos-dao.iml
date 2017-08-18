@@ -14,6 +14,7 @@
     <orderEntry type="module" module-name="bos-utils" />
     <orderEntry type="module" module-name="bos-domain" />
     <orderEntry type="module" module-name="bos-activeMQ" />
+    <orderEntry type="module" module-name="bos-quartz" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.2.8.RELEASE" level="project" />
