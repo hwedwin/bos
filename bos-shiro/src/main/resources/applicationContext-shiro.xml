@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- shiro 权限控制 -->
+    <bean id="shiroSecurityFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login.jsp"/>
+        <property name="successUrl" value="/index.jsp"/>
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+
+        <property name="filterChainDefinitions">
+            <value>
+                /css/** = anon
+                /images/** = anon
+                /js/** = anon
+                /json/** = anon
+                /login.jsp** = anon
+                /validatecode.jsp** = anon
+                /userAction_login.action** = anon
+                /userAction_validCheckcode.action** = anon
+                /** = anon
+            </value>
+        </property>
+    </bean>
+
+    <bean id="securityManager"
+          class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!--在这里注入realm-->
+    </bean>
+</beans>
