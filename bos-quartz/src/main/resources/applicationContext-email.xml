@@ -37,9 +37,6 @@
 
 
     <bean id="mailService" class="com.sirier.email.MailServiceImpl">
-        <property name="mailSender" ref="mailSender"/>
-        <property name="taskExecutor" ref="taskExecutor"/>
-        <property name="freeMarkerConfigurer" ref="freeMarkerConfigurer"/>
     </bean>
 
     <!-- freemarker模板 -->
@@ -53,8 +50,5 @@
             </props>
         </property>
     </bean>
-
-    <!--     <task:annotation-driven/> -->
-
 
 </beans>
