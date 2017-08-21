@@ -21,13 +21,17 @@
                 /validatecode.jsp** = anon
                 /userAction_login.action** = anon
                 /userAction_validCheckcode.action** = anon
-                /** = anon
+                /page_base_**=roles["base"]
+                /page_qupai_**=roles["work"]
+                /** = authc
             </value>
         </property>
     </bean>
 
     <bean id="securityManager"
           class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <!--在这里注入realm-->
+        <property name="realm" ref="myRealm"/>
     </bean>
+
+    <bean id="myRealm" class="com.sirier.shiro.realm.MyRealm"/>
 </beans>
