@@ -1,5 +1,6 @@
 [
-		{ "id":"1001", "pId":"100", "name":"用户管理", "page":"page_admin_userindex.action"},
-		{ "id":"1002", "pId":"100", "name":"功能权限管理", "page":"page_admin_function.action"},
-		{ "id":"1003", "pId":"100", "name":"角色管理", "page":"page_admin_role.action"}
+		{ "id":"1001", "pId":"100", "name":"功能权限管理", "page":"page_admin_function.action"},
+		{ "id":"1002", "pId":"100", "name":"菜单管理", "page":"page_admin_menu.action"},
+		{ "id":"1003", "pId":"100", "name":"角色管理", "page":"page_admin_role.action"},
+		{ "id":"1004", "pId":"100", "name":"用户管理", "page":"page_admin_userindex.action"}
 ]

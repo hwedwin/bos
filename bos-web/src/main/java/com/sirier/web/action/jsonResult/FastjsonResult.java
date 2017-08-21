@@ -1,6 +1,7 @@
 package com.sirier.web.action.jsonResult;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
@@ -98,7 +99,7 @@ public class FastjsonResult implements Result {
         }
 
         //执行序列化操作,并且写回去
-        String jsonString = JSON.toJSONString(rootObject, filter);
+        String jsonString = JSON.toJSONString(rootObject, filter, SerializerFeature.DisableCircularReferenceDetect);//
         System.out.println("fastjson序列化的数据 " + jsonString);
         response.getWriter().println(jsonString);
 

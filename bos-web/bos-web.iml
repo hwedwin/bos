@@ -72,6 +72,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
+    <orderEntry type="module" module-name="bos-shiro" />
     <orderEntry type="module" module-name="bos-service" />
     <orderEntry type="module" module-name="bos-dao" />
     <orderEntry type="module" module-name="bos-utils" />
@@ -79,7 +80,6 @@
     <orderEntry type="module" module-name="bos-activeMQ" />
     <orderEntry type="module" module-name="bos-quartz" />
     <orderEntry type="module" module-name="bos-redis" />
-    <orderEntry type="module" module-name="bos-shiro" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />

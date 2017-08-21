@@ -26,6 +26,12 @@ public class ManageService {
     private CustomerService customerService;
     @Autowired
     private WorkOrderService workOrderService;
+    @Autowired
+    private MenuService menuService;
+    @Autowired
+    private FunctionService functionService;
+    @Autowired
+    private RoleService roleService;
 
 
     public SubareaService getSubareaService() {
@@ -59,4 +65,16 @@ public class ManageService {
     public WorkOrderService getWorkOrderService() {
         return workOrderService;
     }
+
+    public MenuService getMenuService() {
+        return menuService;
+    }
+
+    public FunctionService getFunctionService() {
+        return functionService;
+    }
+    public RoleService getRoleService() {
+        return roleService;
+    }
 }
+

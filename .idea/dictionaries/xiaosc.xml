@@ -20,6 +20,7 @@
       <w>checkcode</w>
       <w>citycode</w>
       <w>combobox</w>
+      <w>combotree</w>
       <w>datagrid</w>
       <w>decidedzone</w>
       <w>decidezone</w>
@@ -31,6 +32,8 @@
       <w>fastjson</w>
       <w>feeitemnum</w>
       <w>floadreqr</w>
+      <w>generatemenu</w>
+      <w>getp</w>
       <w>gson</w>
       <w>guoqi</w>
       <w>haspda</w>
@@ -71,6 +74,7 @@
       <w>senderaddr</w>
       <w>sendername</w>
       <w>senderphone</w>
+      <w>setp</w>
       <w>shiro</w>
       <w>shortcode</w>
       <w>showid</w>
@@ -80,11 +84,14 @@
       <w>starttls</w>
       <w>tmpdir</w>
       <w>updatetime</w>
+      <w>userinfo</w>
+      <w>userlist</w>
       <w>validatebox</w>
       <w>workbill</w>
       <w>workbills</w>
       <w>workordermanage</w>
       <w>workordermanager</w>
+      <w>zindex</w>
     </words>
   </dictionary>
 </component>

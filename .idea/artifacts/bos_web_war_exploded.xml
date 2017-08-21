@@ -7,6 +7,9 @@
           <element id="module-output" name="bos-web" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="bos-shiro-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="bos-shiro" />
+          </element>
           <element id="archive" name="bos-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-service" />
           </element>
@@ -27,9 +30,6 @@
           </element>
           <element id="archive" name="bos-redis-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-redis" />
-          </element>
-          <element id="archive" name="bos-shiro-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="bos-shiro" />
           </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.2.8.RELEASE" />

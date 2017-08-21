@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <!-- 导入jquery核心类库 -->
 <script type="text/javascript"
@@ -29,6 +29,13 @@
 <script type="text/javascript">
 	$(function(){
 		$("#grid").datagrid({
+			iconCls : 'icon-forward',
+			fit : true,
+			border : false,
+			rownumbers : true,
+			striped : true,
+			pageList: [3,5,10],
+			pagination : true,
 			toolbar : [
 				{
 					id : 'add',
@@ -39,7 +46,7 @@
 					}
 				}           
 			],
-			url : '',
+			url : 'functionAction_pageQuery.action',
 			columns : [[
 			  {
 				  field : 'id',
@@ -52,25 +59,15 @@
 				  width : 200
 			  },  
 			  {
+				  field : 'code',
+				  title : '权限关键字',
+				  width : 200
+			  }, 
+			  {
 				  field : 'description',
 				  title : '描述',
 				  width : 200
 			  },  
-			  {
-				  field : 'generateMenu',
-				  title : '是否生成菜单',
-				  width : 200
-			  },  
-			  {
-				  field : 'zindex',
-				  title : '优先级',
-				  width : 200
-			  },  
-			  {
-				  field : 'page',
-				  title : '路径',
-				  width : 200
-			  }
 			]]
 		});
 	});

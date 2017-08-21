@@ -189,6 +189,7 @@
                          <div data-options="name:'product'">按照商品名称查询</div>
                     </div>
 	</div>
+
     <script type="text/javascript">
             //这个方法qq是例子里面的,直接copy过来
             //value是用户输入的值,name是上面条件选择的name值
@@ -199,8 +200,6 @@
                });
            }
     </script>
-
-
 
 	<div region="center" border="false">
     	<table id="grid"></table>
