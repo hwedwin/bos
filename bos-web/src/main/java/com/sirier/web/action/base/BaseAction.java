@@ -49,6 +49,12 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
     public BaseAction() {
         // 对model进行实例化， 通过子类 类声明的泛型
         Type superclass = this.getClass().getGenericSuperclass();
+
+        if (!(superclass instanceof ParameterizedType)) {
+            superclass = this.getClass().getSuperclass().getGenericSuperclass();
+        }
+
+
         // 转化为参数化类型
         ParameterizedType parameterizedType = (ParameterizedType)superclass;
         // 获取一个泛型参数

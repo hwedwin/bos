@@ -12,4 +12,5 @@
     <import resource="applicationContext-quartz.xml"/>
     <import resource="applicationContext-shiro.xml"/>
     <import resource="applicationContext-email.xml"/>
+    <import resource="applicationContext-ehcache.xml"/>
 </beans>

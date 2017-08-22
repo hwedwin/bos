@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/bos-crm/bos-crm.iml" filepath="$PROJECT_DIR$/bos-crm/bos-crm.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-dao/bos-dao.iml" filepath="$PROJECT_DIR$/bos-dao/bos-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-domain/bos-domain.iml" filepath="$PROJECT_DIR$/bos-domain/bos-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bos-ehcache/bos-ehcache.iml" filepath="$PROJECT_DIR$/bos-ehcache/bos-ehcache.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-foreground/bos-foreground.iml" filepath="$PROJECT_DIR$/bos-foreground/bos-foreground.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-quartz/bos-quartz.iml" filepath="$PROJECT_DIR$/bos-quartz/bos-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-redis/bos-redis.iml" filepath="$PROJECT_DIR$/bos-redis/bos-redis.iml" />

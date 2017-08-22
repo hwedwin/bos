@@ -10,6 +10,7 @@
         <module name="bos-crm" />
         <module name="bos-dao" />
         <module name="bos-domain" />
+        <module name="bos-ehcache" />
         <module name="bos-foreground" />
         <module name="bos-quartz" />
         <module name="bos-redis" />
@@ -27,6 +28,7 @@
       <module name="bos-crm" target="1.7" />
       <module name="bos-dao" target="1.7" />
       <module name="bos-domain" target="1.7" />
+      <module name="bos-ehcache" target="1.7" />
       <module name="bos-foreground" target="1.7" />
       <module name="bos-quartz" target="1.7" />
       <module name="bos-redis" target="1.7" />

@@ -49,13 +49,14 @@ public class Menu implements java.io.Serializable {
         return this.name;
     }
 
-    // @Transient
-    // public String getPId() {
-    //     if (parentMenu == null) {
-    //         return "0";
-    //     }
-    //     return parentMenu.getId();
-    // }
+    //动态生成菜单,父模块为null时返回0
+    @Transient
+    public String getPId() {
+        if (parentMenu == null) {
+            return "0";
+        }
+        return parentMenu.getId();
+    }
 
     public Menu() {
     }

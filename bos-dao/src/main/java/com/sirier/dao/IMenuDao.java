@@ -16,4 +16,8 @@ public interface IMenuDao extends JpaRepository<Menu,String>,
 
     @Query("from Menu where parentMenu = ?1")
     List<Menu> findAllByParentMenu(Menu parentMenu);
+
+    @Query("from Menu m inner join fetch m.roles r inner join fetch r.users u where u.id = ?1 " +
+            "order by m.zindex desc")
+    List<Menu> findMenuByUser(Integer id);
 }

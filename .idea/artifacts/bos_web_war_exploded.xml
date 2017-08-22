@@ -31,6 +31,9 @@
           <element id="archive" name="bos-redis-1.0-SNAPSHOT.jar">
             <element id="module-output" name="bos-redis" />
           </element>
+          <element id="archive" name="bos-ehcache-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="bos-ehcache" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
@@ -159,7 +162,7 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.0.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.0.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.5" />
-          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.6.6" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.6.10" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.6" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />

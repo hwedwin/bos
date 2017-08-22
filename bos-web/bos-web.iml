@@ -31,11 +31,12 @@
           <file>file://$MODULE_DIR$/../bos-domain/src/main/resources/applicationContext-domain.xml</file>
           <file>file://$MODULE_DIR$/../bos-redis/src/main/resources/applicationContext-redis.xml</file>
           <file>file://$MODULE_DIR$/../bos-activeMQ/src/main/resources/applicationContext-activeMQ.xml</file>
-          <file>file://$MODULE_DIR$/../bos-utils/src/main/resources/applicationContext-quartz.xml</file>
           <file>file://$MODULE_DIR$/../bos-service/src/main/resources/applicationContext-service.xml</file>
           <file>file://$MODULE_DIR$/../bos-dao/src/main/resources/applicationContext-dao.xml</file>
           <file>file://$MODULE_DIR$/../bos-shiro/src/main/resources/applicationContext-shiro.xml</file>
           <file>file://$MODULE_DIR$/../bos-quartz/src/main/resources/applicationContext-email.xml</file>
+          <file>file://$MODULE_DIR$/../bos-quartz/src/main/resources/applicationContext-quartz.xml</file>
+          <file>file://$MODULE_DIR$/../bos-ehcache/src/main/resources/applicationContext-ehcache.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -80,6 +81,7 @@
     <orderEntry type="module" module-name="bos-activeMQ" />
     <orderEntry type="module" module-name="bos-quartz" />
     <orderEntry type="module" module-name="bos-redis" />
+    <orderEntry type="module" module-name="bos-ehcache" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
@@ -210,7 +212,7 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.5" level="project" />
-    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.6.6" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:4.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.6" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />

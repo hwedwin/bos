@@ -1,8 +1,13 @@
 package com.sirier.web.action;
 
 import com.sirier.domain.Menu;
+import com.sirier.domain.User;
+import com.sirier.utils.FastJsonUtils;
+import com.sirier.utils.MyUtils;
 import com.sirier.web.action.base.BaseAction;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -48,6 +53,17 @@ public class MenuAction extends BaseAction<Menu> {
                 (getPageRequest());
         setPageData(pageData);
         return "pageQuery";
+    }
+
+
+    @Action(value = "menuAction_findMenuByUser")
+    public String findMenuByUser() throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        User user = (User)subject.getPrincipal();
+        List<Menu> list = manageService.getMenuService().findMenuByUser(user.getId());
+        String jsonString = FastJsonUtils.toJsonWithProperty(list, "id", "name","pId","page");
+        MyUtils.setJsonTypeAndWriteBack(jsonString);
+        return NONE;
     }
 
 }

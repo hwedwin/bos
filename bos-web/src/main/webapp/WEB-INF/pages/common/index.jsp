@@ -43,7 +43,8 @@
         };
 
         // 基本功能菜单加载
-        $.post("${pageContext.request.contextPath}/json/menu.json", function (data) {
+        $.post("${pageContext.request.contextPath}/menuAction_findMenuByUser.action", function
+			(data) {
             $.fn.zTree.init($("#treeMenu"), setting, data);
         }, "json");
 
@@ -169,12 +170,17 @@
 	<div data-options="region:'west',split:true,title:'菜单导航'"
          style="width:200px">
 		<div class="easyui-accordion" fit="true" border="false">
+
 			<div title="基本功能" data-options="iconCls:'icon-mini-add'" style="overflow:auto">
 				<ul id="treeMenu" class="ztree"></ul>
 			</div>
+
+			<shiro:hasRole name="admin">
 			<div title="系统管理" data-options="iconCls:'icon-mini-add'" style="overflow:auto">  
 				<ul id="adminMenu" class="ztree"></ul>
 			</div>
+			</shiro:hasRole>
+
 		</div>
 	</div>
 	<div data-options="region:'center'">
