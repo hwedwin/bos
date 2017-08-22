@@ -2,8 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
     <!-- 加载redis配置文件信息 -->
     <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
@@ -36,11 +37,22 @@
         <property name="connectionFactory" ref="redisConnectionFactory"/>
         <!-- 对于中文的存储 需要进行序列化操作存储  -->
         <property name="keySerializer">
-            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+            <!--把序列化接口由String改为JDKXXX  扩展其支持序列化的类型 -->
+            <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer">  -->
+            <bean
+                class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
         </property>
         <property name="valueSerializer">
-            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer">
-            </bean>
+            <bean
+                class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
         </property>
     </bean>
+
+    <!-- 开启redis缓存注解驱动 -->
+    <cache:annotation-driven cache-manager="redisCacheManager"/>
+    <bean id="redisCacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
+        <constructor-arg index="0" name="redisOperations" ref="redisTemplate"/>
+        <property name="defaultExpiration" value="500"></property>
+    </bean>
+
 </beans>

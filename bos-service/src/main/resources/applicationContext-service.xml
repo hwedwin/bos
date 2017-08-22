@@ -30,9 +30,10 @@
         </jaxrs:outInterceptors>
     </jaxrs:server>
 
-    <bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-        <property name="cacheManager"  ref="ehcacheManager"></property>
-    </bean>
-    <cache:annotation-driven cache-manager="springCacheManager"/>
+    <!--注掉,换成使用redis去尝试-->
+    <!--<bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">-->
+        <!--<property name="cacheManager"  ref="ehcacheManager"></property>-->
+    <!--</bean>-->
+    <!--<cache:annotation-driven cache-manager="springCacheManager"/>-->
 
 </beans>
