@@ -31,7 +31,16 @@
     <bean id="securityManager"
           class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
+        <property name="cacheManager" ref="shiroCacheManager"></property>
     </bean>
 
-    <bean id="myRealm" class="com.sirier.shiro.realm.MyRealm"/>
+    <!-- shiro整合 ehcache 将ehcache缓存管理器注入给shiro -->
+    <bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManager" ref="ehcacheManager"></property>
+    </bean>
+
+    <bean id="myRealm" class="com.sirier.shiro.realm.MyRealm">
+        <property name="authorizationCacheName" value="shiro"></property>
+    </bean>
+
 </beans>

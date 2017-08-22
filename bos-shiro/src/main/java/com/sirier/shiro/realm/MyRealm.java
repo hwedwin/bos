@@ -40,6 +40,7 @@ public class MyRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        System.out.println("---授权 ---");
         Subject subject = SecurityUtils.getSubject();
         User user = (User)subject.getPrincipal();
 
