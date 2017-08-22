@@ -3,12 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx.xsd
 	http://cxf.apache.org/jaxrs
-	http://cxf.apache.org/schemas/jaxrs.xsd">
+	http://cxf.apache.org/schemas/jaxrs.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
     <!-- 业务层 配置事务管理 -->
     <!-- jpa 事务管理 -->
@@ -29,5 +30,9 @@
         </jaxrs:outInterceptors>
     </jaxrs:server>
 
+    <bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager"  ref="ehcacheManager"></property>
+    </bean>
+    <cache:annotation-driven cache-manager="springCacheManager"/>
 
 </beans>

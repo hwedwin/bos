@@ -5,6 +5,8 @@ import com.sirier.domain.Standard;
 import com.sirier.service.StandardService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ public class StandardServiceImpl implements StandardService {
     private StandardDao standardDao;
 
     @Override
+    @CacheEvict(allEntries = true,value = "staff")
     public void save(Standard model) {
         standardDao.save(model);
     }
@@ -52,12 +55,14 @@ public class StandardServiceImpl implements StandardService {
     }
 
     @Override
+    @Cacheable(value = "staff")
     public List<Standard> listStandard() {
         List<Standard> list = standardDao.findAll();
         return list;
     }
 
     @Override
+    @Cacheable(value = "staff", key = "#pageRequest.pageNumber+'_'+#pageRequest.pageSize")
     public Page<Standard> pageQuery(PageRequest pageRequest) {
         //开始使用spring data的自带方法
         Page<Standard> pageData = standardDao.findAll(pageRequest);

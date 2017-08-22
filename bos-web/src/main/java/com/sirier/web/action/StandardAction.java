@@ -3,9 +3,9 @@ package com.sirier.web.action;
 import com.sirier.domain.Standard;
 import com.sirier.domain.User;
 import com.sirier.utils.LogUtils;
-import com.sirier.utils.MyUtils;
 import com.sirier.web.action.base.BaseAction;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -31,7 +31,7 @@ public class StandardAction extends BaseAction<Standard> {
     })
     public String save() throws Exception {
         model.setOperationTime(new Date(System.currentTimeMillis()));
-        User loginUser = MyUtils.getLoginUser();
+        User loginUser = (User)SecurityUtils.getSubject().getPrincipal();
         model.setOperator(loginUser.getUsername());
         model.setOperatorCompany(loginUser.getStation());
 

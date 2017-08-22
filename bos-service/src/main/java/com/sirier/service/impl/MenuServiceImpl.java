@@ -39,4 +39,16 @@ public class MenuServiceImpl implements MenuService {
         Page<Menu> pageData = menuDao.findAll(pageRequest);
         return pageData;
     }
+
+    @Override
+    public List<Menu> findMenuByUser(Integer id) {
+        List<Menu> list = null;
+        if (id == 1) { //1为超级管理员
+            list = menuDao.findAll();
+        }
+        else {
+            list = menuDao.findMenuByUser(id);
+        }
+        return list;
+    }
 }

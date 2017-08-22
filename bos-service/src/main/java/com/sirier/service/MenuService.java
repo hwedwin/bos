@@ -14,4 +14,5 @@ public interface MenuService {
 
     Page<Menu> pageQuery(PageRequest pageRequest);
 
+    List<Menu> findMenuByUser(Integer id);
 }
